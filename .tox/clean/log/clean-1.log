@@ -1,0 +1,107 @@
+action: clean, msg: getenv
+cwd: /Users/chad5899/Documents/repositories/docs-vmc-on-aws
+cmd: /Users/chad5899/Documents/repositories/docs-vmc-on-aws/.tox/clean/bin/python -m pip install -r/Users/chad5899/Documents/repositories/docs-vmc-on-aws/requirements.txt
+Looking in indexes: https://pypi.python.org/simple
+Collecting alabaster==0.7.12
+  Using cached https://files.pythonhosted.org/packages/10/ad/00b090d23a222943eb0eda509720a404f531a439e803f6538f35136cae9e/alabaster-0.7.12-py2.py3-none-any.whl
+Collecting babel==2.6.0
+  Downloading https://files.pythonhosted.org/packages/b8/ad/c6f60602d3ee3d92fbed87675b6fb6a6f9a38c223343ababdb44ba201f10/Babel-2.6.0-py2.py3-none-any.whl (8.1MB)
+Collecting certifi==2018.10.15
+  Downloading https://files.pythonhosted.org/packages/56/9d/1d02dd80bc4cd955f98980f28c5ee2200e1209292d5f9e9cc8d030d18655/certifi-2018.10.15-py2.py3-none-any.whl (146kB)
+Collecting chardet==3.0.4
+  Using cached https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl
+Collecting chios==0.1.4
+  Downloading https://files.pythonhosted.org/packages/c7/ea/1c7542ed650258fb73b384eaa20a267b803c19fb50e5a832841d07584ffc/chios-0.1.4-py2.py3-none-any.whl
+Collecting click==7.0
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Processing /Users/chad5899/Library/Caches/pip/wheels/d1/86/9d/16127127306a92d7fd30267890a5634026c045391979c4c317/colorclass-2.2.0-cp37-none-any.whl
+Collecting commonmark==0.5.4
+  Downloading https://files.pythonhosted.org/packages/4d/93/3808cbcebe94d205f55a9a32857df733a603339d32c46cd32669d808d964/CommonMark-0.5.4.tar.gz (120kB)
+Collecting doc8==0.8.0
+  Using cached https://files.pythonhosted.org/packages/d8/39/5427135280657da69b800cebb153f40b5f3209c636659c35a19c8760428a/doc8-0.8.0-py2.py3-none-any.whl
+Collecting docutils==0.14
+  Downloading https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl (543kB)
+Collecting filelock==3.0.9
+  Downloading https://files.pythonhosted.org/packages/b4/fe/5ca16d167849b980925d3bd706cda266c7435dcf21675c546374da207654/filelock-3.0.9-py3-none-any.whl
+Collecting idna==2.7
+  Downloading https://files.pythonhosted.org/packages/4b/2a/0276479a4b3caeb8a8c1af2f8e4355746a97fab05a372e4a2c6a6b876165/idna-2.7-py2.py3-none-any.whl (58kB)
+Collecting imagesize==1.1.0
+  Using cached https://files.pythonhosted.org/packages/fc/b6/aef66b4c52a6ad6ac18cf6ebc5731ed06d8c9ae4d3b2d9951f261150be67/imagesize-1.1.0-py2.py3-none-any.whl
+Collecting jinja2==2.10
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+Collecting markdown==3.0.1
+  Downloading https://files.pythonhosted.org/packages/7a/6b/5600647404ba15545ec37d2f7f58844d690baf2f81f3a60b862e48f29287/Markdown-3.0.1-py2.py3-none-any.whl (89kB)
+Collecting markupsafe==1.0
+  Downloading https://files.pythonhosted.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz
+Collecting packaging==18.0
+  Downloading https://files.pythonhosted.org/packages/89/d1/92e6df2e503a69df9faab187c684585f0136662c12bb1f36901d426f3fab/packaging-18.0-py2.py3-none-any.whl
+Collecting pandoc==1.0.2
+  Downloading https://files.pythonhosted.org/packages/49/b1/d2d4b30ee81ea5cb7aee5ba3591752a637fdc49d0a42fa9683874b60b9fb/pandoc-1.0.2.tar.gz (488kB)
+Collecting pbr==5.1.0
+  Downloading https://files.pythonhosted.org/packages/76/0c/304d968fe010ba7c2ecc1d57e28741ddd3a305439dcf1cdb3b6f896a3c00/pbr-5.1.0-py2.py3-none-any.whl (106kB)
+Collecting pluggy==0.8.0
+  Downloading https://files.pythonhosted.org/packages/1c/e7/017c262070af41fe251401cb0d0e1b7c38f656da634cd0c15604f1f30864/pluggy-0.8.0-py2.py3-none-any.whl
+Collecting ply==3.11
+  Downloading https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl (49kB)
+Collecting py==1.7.0
+  Downloading https://files.pythonhosted.org/packages/3e/c7/3da685ef117d42ac8d71af525208759742dd235f8094221fdaafcd3dba8f/py-1.7.0-py2.py3-none-any.whl (83kB)
+Collecting pyenchant==2.0.0
+  Using cached https://files.pythonhosted.org/packages/4f/c5/5c18df3c5dbf2ce1e6fc8b0fcce1a5dfe7c4ec5ab33b76722fcca9cbfff5/pyenchant-2.0.0-py2.py3.cp27.cp32.cp33.cp34.cp35.cp36.pp27.pp33.pp35-none-macosx_10_6_intel.macosx_10_9_intel.whl
+Collecting pygments==2.2.0
+  Using cached https://files.pythonhosted.org/packages/02/ee/b6e02dc6529e82b75bb06823ff7d005b141037cb1416b10c6f00fc419dca/Pygments-2.2.0-py2.py3-none-any.whl
+Collecting pyparsing==2.2.2
+  Downloading https://files.pythonhosted.org/packages/2b/4a/f06b45ab9690d4c37641ec776f7ad691974f4cf6943a73267475b05cbfca/pyparsing-2.2.2-py2.py3-none-any.whl (57kB)
+Collecting pytz==2018.7
+  Downloading https://files.pythonhosted.org/packages/f8/0e/2365ddc010afb3d79147f1dd544e5ee24bf4ece58ab99b16fbb465ce6dc0/pytz-2018.7-py2.py3-none-any.whl (506kB)
+Collecting recommonmark==0.4.0
+  Downloading https://files.pythonhosted.org/packages/df/a5/8ee4b84af7f997dfdba71254a88008cfc19c49df98983c9a4919e798f8ce/recommonmark-0.4.0-py2.py3-none-any.whl
+Collecting requests==2.20.0
+  Downloading https://files.pythonhosted.org/packages/f1/ca/10332a30cb25b627192b4ea272c351bce3ca1091e541245cccbace6051d8/requests-2.20.0-py2.py3-none-any.whl (60kB)
+Collecting restructuredtext-lint==1.1.3
+  Downloading https://files.pythonhosted.org/packages/7e/b5/d28da439210e7f35e4f58f743e2d1fa9c7f34fb5ab9a0532e0bb3a77274a/restructuredtext_lint-1.1.3.tar.gz
+Collecting six==1.11.0
+  Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Collecting snowballstemmer==1.2.1
+  Using cached https://files.pythonhosted.org/packages/d4/6c/8a935e2c7b54a37714656d753e4187ee0631988184ed50c0cf6476858566/snowballstemmer-1.2.1-py2.py3-none-any.whl
+Collecting sphinx-rtd-theme==0.4.2
+  Downloading https://files.pythonhosted.org/packages/ef/0c/e4a462190506bc4bff6ca8cf93da07b2d13e540466d2e8a760352d0c69b0/sphinx_rtd_theme-0.4.2-py2.py3-none-any.whl (6.4MB)
+Collecting sphinx==1.8.1
+  Downloading https://files.pythonhosted.org/packages/35/e0/e9e83b244eaa382ba21896dda6172617e47aff0be225eb72782cca105d3c/Sphinx-1.8.1-py2.py3-none-any.whl (3.1MB)
+Collecting sphinxcontrib-spelling==4.2.0
+  Downloading https://files.pythonhosted.org/packages/74/90/cb893cd886897eecae8d004a5618e8dc0fe213fc9bb89780463d287d0cf7/sphinxcontrib_spelling-4.2.0-py3-none-any.whl
+Processing /Users/chad5899/Library/Caches/pip/wheels/1c/f8/8d/6ca6a54489006255a14815b29abe922e7cef9320791d057572/sphinxcontrib_versioning-2.2.1-cp37-none-any.whl
+Collecting sphinxcontrib-websupport==1.1.0
+  Downloading https://files.pythonhosted.org/packages/52/69/3c2fbdc3702358c5b34ee25e387b24838597ef099761fc9a42c166796e8f/sphinxcontrib_websupport-1.1.0-py2.py3-none-any.whl
+Collecting stevedore==1.30.0
+  Downloading https://files.pythonhosted.org/packages/35/fa/8683fab2a6e15ecfe107996e56fab91e52fe3ec0b40ca9440a0e1ffe6892/stevedore-1.30.0-py2.py3-none-any.whl (42kB)
+Collecting toml==0.10.0
+  Using cached https://files.pythonhosted.org/packages/a2/12/ced7105d2de62fa7c8fb5fce92cc4ce66b57c95fb875e9318dba7f8c5db0/toml-0.10.0-py2.py3-none-any.whl
+Collecting tox==3.5.3
+  Downloading https://files.pythonhosted.org/packages/d0/43/2160a300e0b77a929a980f36ac7427dcef8f4ddac7a8c21e5a8baedad828/tox-3.5.3-py2.py3-none-any.whl (53kB)
+Collecting urllib3==1.24
+  Downloading https://files.pythonhosted.org/packages/8c/4b/5cbc4cb46095f369117dcb751821e1bef9dd86a07c968d8757e9204c324c/urllib3-1.24-py2.py3-none-any.whl (117kB)
+Collecting virtualenv==16.0.0
+  Downloading https://files.pythonhosted.org/packages/b6/30/96a02b2287098b23b875bc8c2f58071c35d2efe84f747b64d523721dc2b5/virtualenv-16.0.0-py2.py3-none-any.whl (1.9MB)
+Requirement already satisfied: setuptools in ./.tox/clean/lib/python3.7/site-packages (from sphinx==1.8.1->-r /Users/chad5899/Documents/repositories/docs-vmc-on-aws/requirements.txt (line 34)) (42.0.2)
+Building wheels for collected packages: commonmark, markupsafe, pandoc, restructuredtext-lint
+  Building wheel for commonmark (setup.py): started
+  Building wheel for commonmark (setup.py): finished with status 'done'
+  Created wheel for commonmark: filename=CommonMark-0.5.4-cp37-none-any.whl size=30752 sha256=d12475ddc9db9e1d484295de0636e309c523427961fc6e0c654d6f68876a2137
+  Stored in directory: /Users/chad5899/Library/Caches/pip/wheels/a0/f4/35/019d917f6875107ade3aad634c982f5c6b604c5631cddf20ac
+  Building wheel for markupsafe (setup.py): started
+  Building wheel for markupsafe (setup.py): finished with status 'done'
+  Created wheel for markupsafe: filename=MarkupSafe-1.0-cp37-cp37m-macosx_10_14_x86_64.whl size=15525 sha256=3792e3dc51be563d8c2b22a8f62f1872ec21c700612442f1b33232f9004aa1d1
+  Stored in directory: /Users/chad5899/Library/Caches/pip/wheels/33/56/20/ebe49a5c612fffe1c5a632146b16596f9e64676768661e4e46
+  Building wheel for pandoc (setup.py): started
+  Building wheel for pandoc (setup.py): finished with status 'done'
+  Created wheel for pandoc: filename=pandoc-1.0.2-cp37-none-any.whl size=19994 sha256=5156efb85f08114455a9a2a71ee5e389269f76cc80a21935212e31183929297e
+  Stored in directory: /Users/chad5899/Library/Caches/pip/wheels/d1/e8/71/bc3242b3e8f119c62eebdb0dee519fd40ac293e4835839db7c
+  Building wheel for restructuredtext-lint (setup.py): started
+  Building wheel for restructuredtext-lint (setup.py): finished with status 'done'
+  Created wheel for restructuredtext-lint: filename=restructuredtext_lint-1.1.3-cp37-none-any.whl size=27788 sha256=758050b098217f8ecf2211f726e022ce421df325a73766fc33b59ab55509c580
+  Stored in directory: /Users/chad5899/Library/Caches/pip/wheels/bb/1a/e3/9946036f7aa55d8083c07fe2e30c2463cdb65d02c57a57a1ea
+Successfully built commonmark markupsafe pandoc restructuredtext-lint
+Installing collected packages: alabaster, pytz, babel, certifi, chardet, docutils, pyparsing, six, packaging, snowballstemmer, markupsafe, jinja2, pygments, idna, urllib3, requests, sphinxcontrib-websupport, imagesize, sphinx, chios, click, colorclass, commonmark, restructuredtext-lint, pbr, stevedore, doc8, filelock, markdown, ply, pandoc, pluggy, py, pyenchant, recommonmark, sphinx-rtd-theme, sphinxcontrib-spelling, sphinxcontrib-versioning, toml, virtualenv, tox
+Successfully installed alabaster-0.7.12 babel-2.6.0 certifi-2018.10.15 chardet-3.0.4 chios-0.1.4 click-7.0 colorclass-2.2.0 commonmark-0.5.4 doc8-0.8.0 docutils-0.14 filelock-3.0.9 idna-2.7 imagesize-1.1.0 jinja2-2.10 markdown-3.0.1 markupsafe-1.0 packaging-18.0 pandoc-1.0.2 pbr-5.1.0 pluggy-0.8.0 ply-3.11 py-1.7.0 pyenchant-2.0.0 pygments-2.2.0 pyparsing-2.2.2 pytz-2018.7 recommonmark-0.4.0 requests-2.20.0 restructuredtext-lint-1.1.3 six-1.11.0 snowballstemmer-1.2.1 sphinx-1.8.1 sphinx-rtd-theme-0.4.2 sphinxcontrib-spelling-4.2.0 sphinxcontrib-versioning-2.2.1 sphinxcontrib-websupport-1.1.0 stevedore-1.30.0 toml-0.10.0 tox-3.5.3 urllib3-1.24 virtualenv-16.0.0
+WARNING: You are using pip version 19.3.1; however, version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.

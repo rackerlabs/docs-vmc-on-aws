@@ -1,0 +1,81 @@
+action: checksyntax, msg: getenv
+cwd: /Users/chad5899/Documents/repositories/docs-vmc-on-aws
+cmd: /Users/chad5899/Documents/repositories/docs-vmc-on-aws/.tox/checksyntax/bin/python -m pip install -r/Users/chad5899/Documents/repositories/docs-vmc-on-aws/requirements.txt
+Collecting bashate
+  Using cached https://files.pythonhosted.org/packages/c9/bf/08210fabdcabfde6b0b4777804d256c2b4775b65d0aa9fd8c2e8d868c6de/bashate-1.0.0-py3-none-any.whl
+Collecting doc8
+  Using cached https://files.pythonhosted.org/packages/d8/39/5427135280657da69b800cebb153f40b5f3209c636659c35a19c8760428a/doc8-0.8.0-py2.py3-none-any.whl
+Collecting flake8
+  Using cached https://files.pythonhosted.org/packages/f8/1f/7ea40d1e4146ea55dbab41cda1376db092a75794914169aabd7e8d7a7def/flake8-3.7.9-py2.py3-none-any.whl
+Collecting pyenchant
+  Using cached https://files.pythonhosted.org/packages/c9/66/9fe32edef9c56d9397ea7ab5853bc96082cda2770d3437ea0656758fd6d4/pyenchant-3.0.1-py3-none-any.whl
+Collecting sphinxcontrib-spelling
+  Using cached https://files.pythonhosted.org/packages/8a/43/7222757172f007353baef0dfbe435e89cd195ce2666d59995bd9cd4cb556/sphinxcontrib_spelling-4.3.0-py3-none-any.whl
+Collecting sphinx>=1.3.4
+  Using cached https://files.pythonhosted.org/packages/33/34/54e25b6a948d824046289f87a081741328439509beabfa39ab8332fcec75/Sphinx-2.4.3-py3-none-any.whl
+Collecting sphinx_rtd_theme>=0.1.9
+  Using cached https://files.pythonhosted.org/packages/60/b4/4df37087a1d36755e3a3bfd2a30263f358d2dea21938240fa02313d45f51/sphinx_rtd_theme-0.4.3-py2.py3-none-any.whl
+Collecting pbr!=2.1.0,>=2.0.0
+  Using cached https://files.pythonhosted.org/packages/7a/db/a968fd7beb9fe06901c1841cb25c9ccb666ca1b9a19b114d1bbedf1126fc/pbr-5.4.4-py2.py3-none-any.whl
+Collecting Babel!=2.4.0,>=2.3.4
+  Using cached https://files.pythonhosted.org/packages/15/a1/522dccd23e5d2e47aed4b6a16795b8213e3272c7506e625f2425ad025a19/Babel-2.8.0-py2.py3-none-any.whl
+Collecting docutils
+  Using cached https://files.pythonhosted.org/packages/81/44/8a15e45ffa96e6cf82956dd8d7af9e666357e16b0d93b253903475ee947f/docutils-0.16-py2.py3-none-any.whl
+Collecting chardet
+  Using cached https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl
+Collecting stevedore
+  Using cached https://files.pythonhosted.org/packages/e6/49/a35dd566626892d577e426dbe5ea424dd7fbe10645f2c1070dcba474eca9/stevedore-1.32.0-py2.py3-none-any.whl
+Collecting six
+  Using cached https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+Processing /Users/chad5899/Library/Caches/pip/wheels/e2/0b/2f/978270923876dbc00f4427adea00dee9cdfcb5381bdc602e07/restructuredtext_lint-1.3.0-cp37-none-any.whl
+Collecting pyflakes<2.2.0,>=2.1.0
+  Using cached https://files.pythonhosted.org/packages/84/f2/ed0ffb887f8138a8fe5a621b8c0bb9598bfb3989e029f6c6a85ee66628ee/pyflakes-2.1.1-py2.py3-none-any.whl
+Collecting mccabe<0.7.0,>=0.6.0
+  Using cached https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl
+Collecting entrypoints<0.4.0,>=0.3.0
+  Using cached https://files.pythonhosted.org/packages/ac/c6/44694103f8c221443ee6b0041f69e2740d89a25641e62fb4f2ee568f2f9c/entrypoints-0.3-py2.py3-none-any.whl
+Collecting pycodestyle<2.6.0,>=2.5.0
+  Using cached https://files.pythonhosted.org/packages/0e/0c/04a353e104d2f324f8ee5f4b32012618c1c86dd79e52a433b64fceed511b/pycodestyle-2.5.0-py2.py3-none-any.whl
+Collecting alabaster<0.8,>=0.7
+  Using cached https://files.pythonhosted.org/packages/10/ad/00b090d23a222943eb0eda509720a404f531a439e803f6538f35136cae9e/alabaster-0.7.12-py2.py3-none-any.whl
+Collecting packaging
+  Using cached https://files.pythonhosted.org/packages/98/42/87c585dd3b113c775e65fd6b8d9d0a43abe1819c471d7af702d4e01e9b20/packaging-20.1-py2.py3-none-any.whl
+Collecting sphinxcontrib-serializinghtml
+  Using cached https://files.pythonhosted.org/packages/9a/ca/bfad79b79b3821d0c6361c431f0ef4aec16ee248338b2c2013008b34d345/sphinxcontrib_serializinghtml-1.1.4-py2.py3-none-any.whl
+Collecting sphinxcontrib-applehelp
+  Using cached https://files.pythonhosted.org/packages/dc/47/86022665a9433d89a66f5911b558ddff69861766807ba685de2e324bd6ed/sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl
+Collecting Jinja2>=2.3
+  Using cached https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl
+Collecting sphinxcontrib-devhelp
+  Using cached https://files.pythonhosted.org/packages/c5/09/5de5ed43a521387f18bdf5f5af31d099605c992fd25372b2b9b825ce48ee/sphinxcontrib_devhelp-1.0.2-py2.py3-none-any.whl
+Collecting snowballstemmer>=1.1
+  Using cached https://files.pythonhosted.org/packages/7d/4b/cdf1113a0e88b641893b814e9c36f69a6fda28cd88b62c7f0d858cde3166/snowballstemmer-2.0.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in ./.tox/checksyntax/lib/python3.7/site-packages (from sphinx>=1.3.4->-r /Users/chad5899/Documents/repositories/docs-vmc-on-aws/requirements.txt (line 6)) (42.0.2)
+Collecting sphinxcontrib-jsmath
+  Using cached https://files.pythonhosted.org/packages/c2/42/4c8646762ee83602e3fb3fbe774c2fac12f317deb0b5dbeeedd2d3ba4b77/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
+Collecting imagesize
+  Using cached https://files.pythonhosted.org/packages/31/b2/b5522a0c8d11e4aff83f8342f3f0dea68c2fb25aa44403e420587f0ce204/imagesize-1.2.0-py2.py3-none-any.whl
+Collecting sphinxcontrib-htmlhelp
+  Using cached https://files.pythonhosted.org/packages/36/62/8222554b29b3acde8420128d6d3999c5904d40922ef4b6ccb370e2be7421/sphinxcontrib_htmlhelp-1.0.3-py2.py3-none-any.whl
+Collecting sphinxcontrib-qthelp
+  Using cached https://files.pythonhosted.org/packages/2b/14/05f9206cf4e9cfca1afb5fd224c7cd434dcc3a433d6d9e4e0264d29c6cdb/sphinxcontrib_qthelp-1.0.3-py2.py3-none-any.whl
+Collecting Pygments>=2.0
+  Using cached https://files.pythonhosted.org/packages/be/39/32da3184734730c0e4d3fa3b2b5872104668ad6dc1b5a73d8e477e5fe967/Pygments-2.5.2-py2.py3-none-any.whl
+Collecting requests>=2.5.0
+  Using cached https://files.pythonhosted.org/packages/1a/70/1935c770cb3be6e3a8b78ced23d7e0f3b187f5cbfab4749523ed65d7c9b1/requests-2.23.0-py2.py3-none-any.whl
+Collecting pytz>=2015.7
+  Using cached https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl
+Collecting pyparsing>=2.0.2
+  Using cached https://files.pythonhosted.org/packages/5d/bc/1e58593167fade7b544bfe9502a26dc860940a79ab306e651e7f13be68c2/pyparsing-2.4.6-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23
+  Using cached https://files.pythonhosted.org/packages/ce/c6/f000f1af136ef74e4a95e33785921c73595c5390403f102e9b231b065b7a/MarkupSafe-1.1.1-cp37-cp37m-macosx_10_6_intel.whl
+Collecting idna<3,>=2.5
+  Using cached https://files.pythonhosted.org/packages/89/e3/afebe61c546d18fb1709a61bee788254b40e736cff7271c7de5de2dc4128/idna-2.9-py2.py3-none-any.whl
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1
+  Using cached https://files.pythonhosted.org/packages/e8/74/6e4f91745020f967d09332bb2b8b9b10090957334692eb88ea4afe91b77f/urllib3-1.25.8-py2.py3-none-any.whl
+Collecting certifi>=2017.4.17
+  Using cached https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl
+Installing collected packages: pbr, pytz, Babel, bashate, docutils, chardet, six, stevedore, restructuredtext-lint, doc8, pyflakes, mccabe, entrypoints, pycodestyle, flake8, pyenchant, alabaster, pyparsing, packaging, sphinxcontrib-serializinghtml, sphinxcontrib-applehelp, MarkupSafe, Jinja2, sphinxcontrib-devhelp, snowballstemmer, sphinxcontrib-jsmath, imagesize, sphinxcontrib-htmlhelp, sphinxcontrib-qthelp, Pygments, idna, urllib3, certifi, requests, sphinx, sphinxcontrib-spelling, sphinx-rtd-theme
+Successfully installed Babel-2.8.0 Jinja2-2.11.1 MarkupSafe-1.1.1 Pygments-2.5.2 alabaster-0.7.12 bashate-1.0.0 certifi-2019.11.28 chardet-3.0.4 doc8-0.8.0 docutils-0.16 entrypoints-0.3 flake8-3.7.9 idna-2.9 imagesize-1.2.0 mccabe-0.6.1 packaging-20.1 pbr-5.4.4 pycodestyle-2.5.0 pyenchant-3.0.1 pyflakes-2.1.1 pyparsing-2.4.6 pytz-2019.3 requests-2.23.0 restructuredtext-lint-1.3.0 six-1.14.0 snowballstemmer-2.0.0 sphinx-2.4.3 sphinx-rtd-theme-0.4.3 sphinxcontrib-applehelp-1.0.2 sphinxcontrib-devhelp-1.0.2 sphinxcontrib-htmlhelp-1.0.3 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-1.0.3 sphinxcontrib-serializinghtml-1.1.4 sphinxcontrib-spelling-4.3.0 stevedore-1.32.0 urllib3-1.25.8
+WARNING: You are using pip version 19.3.1; however, version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
