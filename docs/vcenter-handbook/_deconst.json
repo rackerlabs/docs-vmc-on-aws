@@ -1,0 +1,8 @@
+{
+    "contentIDBase": "https://github.com/rackerlabs/rpc-vmware/vcenter-handbook/",
+    "githubUrl": "https://github.com/rackerlabs/docs-rackspace/",
+    "githubBranch": "master",
+    "meta": {
+        "preferGithubIssues": true
+    }
+}
