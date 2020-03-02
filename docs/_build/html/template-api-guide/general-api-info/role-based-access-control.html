@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Role-based access control (RBAC) &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API reference" href="../api-reference/index.html" />
+    <link rel="prev" title="API behavior and statuses" href="api-behavior.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../template-user-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a><ul class="current">
+<li class="toctree-l2"><a class="reference external" href="https://developer.rackspace.com/docs/{product-name}/{v#}/">Product name v#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/index.html">Getting started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">General API information</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="service-access.html">Service access endpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request-response.html">Request and response types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="product-specific-general-api-content.html">Content compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paginated-collections.html">Paginated collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="date-time-format.html">Date and time format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api-behavior.html">API behavior and statuses</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Role-based access control (RBAC)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#assigning-roles-to-account-users">Assigning roles to account users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roles-available-for-product-name">Roles available for &lt;PRODUCT NAME&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiproduct-global-roles-and-permissions">Multiproduct global roles and permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolving-conflicts-between-rbac-multiproduct-and-product-specific-roles">Resolving conflicts between RBAC multiproduct and product-specific roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rbac-permissions-cross-reference-to-product-name-api-operations">RBAC permissions cross-reference to &lt;PRODUCT NAME&gt; API operations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/index.html">API reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/index.html">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service-updates.html">Service updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional-resources.html">Additional resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disclaimer.html">Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a> &raquo;</li>
+        
+          <li><a href="index.html">General API information</a> &raquo;</li>
+        
+      <li>Role-based access control (RBAC)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-api-guide/general-api-info/role-based-access-control.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="role-based-access-control"></span><div class="section" id="role-based-access-control-rbac">
+<h1>Role-based access control (RBAC)<a class="headerlink" href="#role-based-access-control-rbac" title="Permalink to this headline">¶</a></h1>
+<p>Role-based access control (RBAC) restricts access to the capabilities of
+Rackspace Cloud services, including the &lt;PRODUCT NAME&gt; API, to authorized
+users only. RBAC enables Rackspace Cloud customers to specify
+users have access to which &lt;PRODUCT NAME&gt; API
+service capabilities, based on roles defined by Rackspace. The
+permissions to perform certain operations in &lt;PRODUCT NAME&gt; API (create,
+read, update, delete) are assigned to specific roles. The account owner user
+assigns these roles, either global (multiproduct) or product-specific (for
+example, &lt;PRODUCT NAME&gt;), to account users.</p>
+<div class="section" id="assigning-roles-to-account-users">
+<span id="rbac-assign"></span><h2>Assigning roles to account users<a class="headerlink" href="#assigning-roles-to-account-users" title="Permalink to this headline">¶</a></h2>
+<p>The account owner (identity:user-admin) can create account users on the
+account and then assign roles to those users. The roles grant the account
+users specific permissions for accessing the capabilities of the
+&lt;PRODUCT NAME&gt; service. Each account has only one account owner, and that role
+is assigned by default to any Rackspace Cloud account when the account is
+created.</p>
+<p>See the Identity API guide for information about how to
+perform the following tasks:</p>
+<ul class="simple">
+<li><a href="#id1"><span class="problematic" id="id2">:rax-devdocs:`Add account users \
+&lt;cloud-identity/v2/api-reference/users-operations/#add-user&gt;`</span></a></li>
+<li><a href="#id3"><span class="problematic" id="id4">:rax-devdocs:`Add role to user \
+&lt;cloud-identity/v2/api-reference/role-operations/#add-role-to-user&gt;`</span></a></li>
+<li><a href="#id5"><span class="problematic" id="id6">:rax-devdocs:`Delete global role from user \
+&lt;cloud-identity/v2/api-reference/role-operations/#delete-global-role-from-user&gt;`</span></a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The account owner (identity:user-admin) role cannot hold any
+additional roles because it already has full access to all capabilities.</p>
+</div>
+</div>
+<div class="section" id="roles-available-for-product-name">
+<span id="rbac-available-roles"></span><h2>Roles available for &lt;PRODUCT NAME&gt;<a class="headerlink" href="#roles-available-for-product-name" title="Permalink to this headline">¶</a></h2>
+<p>The following table describes the roles that can be used to access the
+&lt;PRODUCT NAME&gt; API.</p>
+<table border="1" class="colwidths-given docutils" id="id9">
+<caption><span class="caption-text"><strong>Product roles and capabilities</strong></span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Role name</th>
+<th class="head">Role permissions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>lbaas:admin</td>
+<td>This role provides Create, Read, Update, and Delete permissions
+in &lt;PRODUCT NAME&gt;, where access is granted.</td>
+</tr>
+<tr class="row-odd"><td>lbaas:creator</td>
+<td>This role provides Create, Read and Update permissions in
+&lt;PRODUCT NAME&gt;, where access is granted.</td>
+</tr>
+<tr class="row-even"><td>lbaas:observer</td>
+<td>This role provides Read permission in &lt;PRODUCT NAME&gt;, where access
+is granted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="multiproduct-global-roles-and-permissions">
+<span id="rbac-available-multi-roles"></span><h2>Multiproduct global roles and permissions<a class="headerlink" href="#multiproduct-global-roles-and-permissions" title="Permalink to this headline">¶</a></h2>
+<p>Additionally, two multiproduct roles apply to all products. Users with
+multiproduct roles inherit access to products when those products become
+RBAC-enabled. The following table describes these roles and their permissions.</p>
+<table border="1" class="colwidths-given docutils" id="id10">
+<caption><span class="caption-text"><strong>Multiproduct roles and permissions</strong></span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Role name</th>
+<th class="head">Role permissions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>admin</td>
+<td>This role provides create, read, update, and delete permissions
+in all products, where access is granted.</td>
+</tr>
+<tr class="row-odd"><td>observer</td>
+<td>This role provides read permission in all products,
+where access is granted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="resolving-conflicts-between-rbac-multiproduct-and-product-specific-roles">
+<span id="rbac-resolve-role-conflict"></span><h2>Resolving conflicts between RBAC multiproduct and product-specific roles<a class="headerlink" href="#resolving-conflicts-between-rbac-multiproduct-and-product-specific-roles" title="Permalink to this headline">¶</a></h2>
+<p>The account owner can set roles for both multiproduct and &lt;PRODUCT NAME&gt;
+scope, and it is important to understand how any potential conflicts between
+these roles are resolved. When two roles appear to conflict, the role that
+provides the more extensive permissions takes precedence. Therefore, admin
+roles take precedence over observer and creator roles, because admin roles
+provide more permissions.</p>
+<p>The following table shows two examples of how potential conflicts between user
+roles in the Control Panel are resolved.</p>
+<table border="1" class="colwidths-given docutils" id="id11">
+<caption><span class="caption-text"><strong>Example of resolving permissions</strong></span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Permission configuration</th>
+<th class="head">Control Panel permission view</th>
+<th class="head">Control Panel admin capabilities</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>User is assigned the following roles: multiproduct <strong>observer</strong> and
+&lt;PRODUCT NAME&gt; <strong>admin</strong></td>
+<td>Appears that the user has only the multiproduct <strong>observer</strong> role</td>
+<td>User can perform admin functions for &lt;PRODUCT NAME&gt; only. The user has
+the <strong>observer</strong> role for the rest of the products.</td>
+</tr>
+<tr class="row-odd"><td>User is assigned to the following roles: multiproduct <strong>admin</strong> and
+&lt;PRODUCT NAME&gt; <strong>observer</strong></td>
+<td>Appears that the user has only the multiproduct <strong>admin</strong> role</td>
+<td>User can perform admin functions for all of the products.
+The &lt;PRODUCT NAME&gt; <strong>observer</strong> role is ignored.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rbac-permissions-cross-reference-to-product-name-api-operations">
+<span id="rbac-permissions-info"></span><h2>RBAC permissions cross-reference to &lt;PRODUCT NAME&gt; API operations<a class="headerlink" href="#rbac-permissions-cross-reference-to-product-name-api-operations" title="Permalink to this headline">¶</a></h2>
+<p>API operations for &lt;PRODUCT NAME&gt; may or may not be available to all
+roles. To see which operations are permitted to invoke which calls,
+review the <a href="#id7"><span class="problematic" id="id8">:how-to:`Permissions Matrix for Role-Based Access Control (RBAC) \
+&lt;permissions-matrix-for-role-based-access-control-rbac&gt;`</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api-reference/index.html" class="btn btn-neutral float-right" title="API reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api-behavior.html" class="btn btn-neutral" title="API behavior and statuses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Logging (example) &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-api-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Logging (example)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-user-guide/examples/logging-example.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="logging-example">
+<span id="logging-example-ug"></span><h1>Logging (example)<a class="headerlink" href="#logging-example" title="Permalink to this headline">¶</a></h1>
+<p>The Rackspace Cloud Backup infrastructure communicates with your servers
+through a software-based agent that resides on the system that you have
+designated to back up. This agent stores information about which files
+and directories you want to back up, and at what frequency.</p>
+<p>The agent also gathers information about how Cloud Backup is interacting with
+your server or storage volume, and it can produce detailed logging information
+to help with troubleshooting. This section provides information about the
+logging functions of the Cloud Backup agent.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#log-configuration-file" id="id1">Log configuration file</a></li>
+<li><a class="reference internal" href="#agent-logging-operations" id="id2">Agent logging operations</a></li>
+<li><a class="reference internal" href="#logging-modes" id="id3">Logging modes</a></li>
+<li><a class="reference internal" href="#trace-level-debugging" id="id4">Trace-level debugging</a></li>
+<li><a class="reference internal" href="#where-to-store-saved-logs" id="id5">Where to store saved logs</a></li>
+<li><a class="reference internal" href="#locations-of-agent-files" id="id6">Locations of agent files</a></li>
+<li><a class="reference internal" href="#disable-logging" id="id7">Disable logging</a></li>
+</ul>
+</div>
+<div class="section" id="log-configuration-file">
+<h2>Log configuration file<a class="headerlink" href="#log-configuration-file" title="Permalink to this headline">¶</a></h2>
+<p>The log configuration file is named <strong>log4cxx.xml</strong>, and it uses <strong>log4j</strong>
+syntax. The default configuration differs between Windows and Linux only in the
+target log file path. Otherwise, the file is similar to the following example
+of a Windows configuration file:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE log4j:configuration SYSTEM &quot;log4j.dtd&quot;[]&gt;
+&lt;log4j:configuration xmlns:log4j=&quot;http://jakarta.apache.org/log4j/&quot;&gt;
+  &lt;appender name=&quot;FILE&quot; class=&quot;org.apache.log4j.RollingFileAppender&quot;&gt;
+    &lt;param name=&quot;File&quot; value=&quot;C:\ProgramData\Driveclient\log\driveclient.log&quot; /&gt;
+    &lt;param name=&quot;MaxFileSize&quot; value=&quot;500MB&quot; /&gt;
+    &lt;param name=&quot;MaxBackupIndex&quot; value=&quot;10&quot; /&gt;
+    &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;
+      &lt;param name=&quot;ConversionPattern&quot; value=&quot;[%d{yyyy-MM-dd HH:mm:ss}{GMT+0}|T%t|%-5p|%c|%C::%M(%L)] %m%n&quot; /&gt;
+    &lt;/layout&gt;
+  &lt;/appender&gt;
+  &lt;appender name=&quot;ASYNC&quot; class=&quot;org.apache.log4j.AsyncAppender&quot;&gt;
+    &lt;appender-ref ref=&quot;FILE&quot; /&gt;
+  &lt;/appender&gt;
+  &lt;root&gt;
+    &lt;level value=“INFO&quot; /&gt;
+    &lt;appender-ref ref=&quot;ASYNC&quot; /&gt;
+  &lt;/root&gt;
+&lt;/log4j:configuration&gt;
+</pre></div>
+</div>
+<p>For information about how to locate the <strong>log4cxx.xml</strong> configuration file on
+Windows or Linux, see “Locations of Cloud Backup agent files.”</p>
+</div>
+<div class="section" id="agent-logging-operations">
+<h2>Agent logging operations<a class="headerlink" href="#agent-logging-operations" title="Permalink to this headline">¶</a></h2>
+<p>The Cloud Backup agent stores troubleshooting information in a
+<em>primary log file</em> and a series of up to 12 <em>rollover log files</em>. When logging
+capacity is reached, the primary log file is rolled over to a rollover log
+file, and a new primary log file is started. When the maximum number of
+rollover logs is reached, the oldest rollover log file is deleted.</p>
+<p>The rollover log files have a maximum size, and a maximum number of rollover
+logs are stored on a server. These limits help to prevent logs from filling up
+the cache volume (often the system volume) of the server.</p>
+</div>
+<div class="section" id="logging-modes">
+<h2>Logging modes<a class="headerlink" href="#logging-modes" title="Permalink to this headline">¶</a></h2>
+<p>To ensure that the logs are recording the correct information, you might need
+to modify the configuration file for your agent and set the appropriate
+<em>level value</em>. The available logging modes that you can specify for the level
+value are as follows:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Mode</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OFF</td>
+<td>Turn off all logging.</td>
+</tr>
+<tr class="row-odd"><td>FATAL</td>
+<td>Log very severe errors that cause the application to stop running.</td>
+</tr>
+<tr class="row-even"><td>ERROR</td>
+<td>Log all error events, even those that might still allow the application
+to continue running.</td>
+</tr>
+<tr class="row-odd"><td>WARN</td>
+<td>Log warnings of potentially harmful situations.</td>
+</tr>
+<tr class="row-even"><td>INFO</td>
+<td>Log informational messages that highlight the progress of the
+application. This is the default logging mode for the Cloud Backup
+agent.</td>
+</tr>
+<tr class="row-odd"><td>DEBUG</td>
+<td>Log fine-grained informational events to assist in troubleshooting.</td>
+</tr>
+<tr class="row-even"><td>TRACE</td>
+<td>Log even more fine-grained informational events than the DEBUG mode.</td>
+</tr>
+<tr class="row-odd"><td>ALL</td>
+<td>Turn on all logging.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">TRACE and ALL are equivalent values.</p>
+</div>
+</div>
+<div class="section" id="trace-level-debugging">
+<h2>Trace-level debugging<a class="headerlink" href="#trace-level-debugging" title="Permalink to this headline">¶</a></h2>
+<p>The TRACE logging mode increases the risk of losing older log information
+because of the large volume of data written to the logs in this mode. The
+volume of data depends on what operations are running, how long they run, and
+so on. Under certain conditions, TRACE logging might write hundreds or even
+thousands of lines per second to the logs.</p>
+<p>Sometimes troubleshooting the agent requires running the TRACE log mode for a
+long time. When this happens, some information that Rackspace Support needs
+might be overwritten before it can be captured. In such cases, you must
+increase the values of the <code class="docutils literal notranslate"><span class="pre">MaxFileSize</span></code> and <code class="docutils literal notranslate"><span class="pre">MaxBackupIndex</span></code> parameters
+for the agent logs.</p>
+<ul class="simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">MaxFileSize</span></code> parameter specifies the maximum size of each rollover
+log file. The maximum value is <code class="docutils literal notranslate"><span class="pre">unlimited</span></code> (limited only by the size of the
+free space on the volume where the cache files reside).</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">MaxBackupIndex</span></code> parameter specifies the number of rollover log files.
+The maximum value is <code class="docutils literal notranslate"><span class="pre">12</span></code>.</li>
+</ul>
+<p>In the following example <strong>log4cxx.xml</strong> configuration file, these values are
+set higher than the default values:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE log4j:configuration SYSTEM &quot;log4j.dtd&quot;[]&gt;
+&lt;log4j:configuration xmlns:log4j=&quot;http://jakarta.apache.org/log4j/&quot;&gt;
+  &lt;appender name=&quot;FILE&quot; class=&quot;org.apache.log4j.RollingFileAppender&quot;&gt;
+    &lt;param name=&quot;File&quot; value=&quot;C:\ProgramData\Driveclient\log\driveclient.log&quot; /&gt;
+    &lt;param name=&quot;MaxFileSize&quot; value=“2000MB&quot; /&gt;
+    &lt;param name=&quot;MaxBackupIndex&quot; value=&quot;12&quot; /&gt;
+    &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;
+      &lt;param name=&quot;ConversionPattern&quot; value=&quot;[%d{yyyy-MM-dd HH:mm:ss}{GMT+0}|T%t|%-5p|%c|%C::%M(%L)] %m%n&quot; /&gt;
+    &lt;/layout&gt;
+  &lt;/appender&gt;
+  &lt;appender name=&quot;ASYNC&quot; class=&quot;org.apache.log4j.AsyncAppender&quot;&gt;
+    &lt;appender-ref ref=&quot;FILE&quot; /&gt;
+  &lt;/appender&gt;
+  &lt;root&gt;
+    &lt;level value=“TRACE&quot; /&gt;
+    &lt;appender-ref ref=&quot;ASYNC&quot; /&gt;
+  &lt;/root&gt;
+&lt;/log4j:configuration&gt;
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">MaxFileSize</span></code> of <code class="docutils literal notranslate"><span class="pre">1000MB</span></code> and a <code class="docutils literal notranslate"><span class="pre">MaxBackupIndex</span></code> of <code class="docutils literal notranslate"><span class="pre">12</span></code> could result
+in approximately 13 GB of logs written to the cache volume (1 primary log
+and 12 rollover logs, each approximately 1000 MB in size).</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The cache volume is typically the system drive. Setting <code class="docutils literal notranslate"><span class="pre">MaxFileSize</span></code> to a
+value that causes the system volume to fill up can have serious consequences
+on the server. One possible consequence is database corruption of the Cloud
+Backup agent, which causes restores, cleanups, and backups to fail, and
+cripples the server in other ways. If you need a large amount of space for
+TRACE logging, ensure that the space is available on your system drive, with
+more room available for other applications and files. Alternatively,
+consider setting your log path in <strong>log4cxx.xml</strong> (<code class="docutils literal notranslate"><span class="pre">param</span> <span class="pre">name=&quot;File&quot;</span></code>) to
+a volume with sufficient space to hold the maximum amount of data that is
+generated by the logs.</p>
+</div>
+<p>After the problem is diagnosed, we recommend that you return these parameters
+to their original values to conserve disk space.</p>
+</div>
+<div class="section" id="where-to-store-saved-logs">
+<h2>Where to store saved logs<a class="headerlink" href="#where-to-store-saved-logs" title="Permalink to this headline">¶</a></h2>
+<p>Logging in INFO mode or lower generates a relatively small amount of log
+volume, but verbose logging (such as DEBUG and TRACE) can quickly accumulate a
+large amount of data. The preferred method of saving log files is through the
+<strong>Request Agent Log</strong> button on the server Cloud Backup <strong>System Details</strong>
+page. However, there might be times when this is impossible or impractical. In
+those cases, you might have to save the log files manually. The path to your
+log files is in the <code class="docutils literal notranslate"><span class="pre">File</span></code> parameter of the <strong>log4cxx.xml</strong> configuration
+file.</p>
+<p>When you save log files manually, compress the saved logs by using a zip or
+archive utility. Even when they are compressed, log files are sometimes too
+large to attach to a support ticket. To make your logs easily available to
+Rackspace Support, we recommend that you upload them to your Cloud Files
+account in a public container. From there, you can copy the download links for
+the log files and paste the links into your support ticket.</p>
+</div>
+<div class="section" id="locations-of-agent-files">
+<h2>Locations of agent files<a class="headerlink" href="#locations-of-agent-files" title="Permalink to this headline">¶</a></h2>
+<p>This section lists the locations of the Cloud Backup agent on both Linux and
+Windows servers.</p>
+<div class="section" id="agent-file-locations-on-linux">
+<h3>Agent file locations on Linux<a class="headerlink" href="#agent-file-locations-on-linux" title="Permalink to this headline">¶</a></h3>
+<p>Assuming a default installation, following are the agent file locations
+on Linux systems:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File</th>
+<th class="head">Location</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Configuration files</td>
+<td><strong>/etc/driveclient</strong></td>
+</tr>
+<tr class="row-odd"><td>Logs</td>
+<td><p class="first"><strong>/var/log</strong></p>
+<p class="last">This value might be different on your server, depending on your settings
+in the <strong>log4cxx.xml</strong> file under Configuration files.</p>
+</td>
+</tr>
+<tr class="row-even"><td>Startup script</td>
+<td><strong>/etc/init.d</strong></td>
+</tr>
+<tr class="row-odd"><td>Application</td>
+<td><strong>/usr/local/bin</strong></td>
+</tr>
+<tr class="row-even"><td>PID file for running the agent</td>
+<td><strong>/var/run/driveclient.pid</strong></td>
+</tr>
+<tr class="row-odd"><td>Database</td>
+<td>Search for a <strong>*.db</strong> file under <strong>/var/cache/driveclient</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <code class="docutils literal notranslate"><span class="pre">driveclient</span></code> is installed as an individual user, most of these files
+are under <strong>~/.driveclient</strong>.</p>
+</div>
+</div>
+<div class="section" id="agent-file-locations-on-windows">
+<h3>Agent file locations on Windows<a class="headerlink" href="#agent-file-locations-on-windows" title="Permalink to this headline">¶</a></h3>
+<p>Finding the <code class="docutils literal notranslate"><span class="pre">driveclient</span></code> files under various flavors of Windows is a
+little complicated. In general, you can find these files under the
+folder to which <strong>CSIDL_COMMON_APPDATA</strong> points.</p>
+<ul class="simple">
+<li>For more information about this location on Windows versions starting with
+Vista, see <a class="reference external" href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd378457(v=vs.85).aspx">KNOWNFOLDERID</a>.</li>
+<li>For more information about this location on earlier versions of Windows,
+see <a class="reference external" href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb762494(v=vs.85).aspx">CSIDL</a>.</li>
+</ul>
+<p>In a typical installation, the files are located in the following folders:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File</th>
+<th class="head">Location</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Configuration files</td>
+<td><strong>%ProgramData%\Driveclient</strong></td>
+</tr>
+<tr class="row-odd"><td>Logs</td>
+<td><p class="first"><strong>%ProgramData%\Driveclient\logs</strong></p>
+<p class="last">This value might be different on your server, depending on your settings
+in the <strong>log4cxx.xml</strong> file under Configuration files.</p>
+</td>
+</tr>
+<tr class="row-even"><td>Application</td>
+<td><strong>%ProgramFiles%\Driveclient</strong></td>
+</tr>
+<tr class="row-odd"><td>Database</td>
+<td>Search for a <strong>*.db</strong> file under <strong>%ProgramData%\Driveclient</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="disable-logging">
+<h2>Disable logging<a class="headerlink" href="#disable-logging" title="Permalink to this headline">¶</a></h2>
+<p>To disable logging, remove the <code class="docutils literal notranslate"><span class="pre">appender-ref</span></code> tag from the <strong>log4cxx.xml</strong>
+file.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Components (example) &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-api-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Components (example)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-user-guide/examples/components-example.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="components-example">
+<span id="components-example-ug"></span><h1>Components (example)<a class="headerlink" href="#components-example" title="Permalink to this headline">¶</a></h1>
+<p>Rackspace Private Cloud powered by VMware (RPC-VMware) is composed of a VMware
+vSphere cluster for management (management cluster) that is managed by a
+Rackspace back-end vCenter Server, and one or more VMware vSphere clusters
+managed by your private cloud vCenter Server for running your workloads
+(compute clusters). RPC-VMware provides core components and, optionally, one or
+more add-on components that you select. Each of these add-on components might
+require management services that run in the two-node, highly available
+management cluster and might also have services components that run on your
+compute cluster. These management services are managed and maintained by
+Rackspace.</p>
+<p>The following table describes the management services for the core components
+of RPC-VMware. Your private cloud includes these services.</p>
+<p><strong>Management services for core components</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Service</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Management cluster</td>
+<td>A two-node hypervisor cluster that uses a separate datastore dedicated
+to the management services VMs. This hypervisor cluster and the VMs
+running on it are managed by a back-end vCenter Server that is
+accessible only to Rackspace for the purpose of operating and
+maintaining your environment.</td>
+</tr>
+<tr class="row-odd"><td>Management network</td>
+<td>A single VLAN segment behind your firewall that is used exclusively for
+communication of the management components with the compute cluster.</td>
+</tr>
+<tr class="row-even"><td>vCenter Server virtual appliance</td>
+<td>Provides centralized visibility, proactive management and extensibility
+for VMware vSphere from a single console. vCenter Server is accessible
+from the vSphere client and the vSphere API.</td>
+</tr>
+<tr class="row-odd"><td>Virtual Machine Recovery (VMR) virtual appliance</td>
+<td>Enables image-based backup of the management cluster VMs. It allows
+Rackspace to quickly recover management cluster VMs. This VMR appliance
+is for use only by Rackspace and does not back up any of the VMs created
+by the customer on the compute cluster. No customer access is provided
+to the VMR appliance.</td>
+</tr>
+<tr class="row-even"><td>VMware vSphere Update Manager™ for Windows Server</td>
+<td>Automates patch management and eliminates manual tracking and patching
+of vSphere hosts. It compares the state of vSphere
+hosts with baselines and then updates and patches hosts to enforce
+compliance. Rackspace uses this system to maintain dedicated VMware
+services. No customer access is provided.</td>
+</tr>
+</tbody>
+</table>
+<p>The following table describes the management services for the optional add-on
+components of RPC-VMware that require the provisioning of additional services
+on the management cluster. Your private cloud might include one or more of
+these services if you have selected any of the add-on components listed.</p>
+<p><strong>Management services for optional components</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Service</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>NSX® Manager virtual appliance</td>
+<td>The NSX Manager is included if your RPC-VMware cloud includes the
+NSX add-on feature. The NSX Manager provides the graphical user
+interface (GUI) and the REST APIs for creating, configuring, and
+monitoring virtual network components.</td>
+</tr>
+<tr class="row-odd"><td>vRealize® Operations Manager™ virtual appliance</td>
+<td>The vRealize Operations Manager virtual appliance is included if your
+RPC-VMware cloud includes the vRealize Operations Manager virtual
+appliance add-on feature. The vRealize Operations Manager virtual
+appliance provides all of vRealize Operations Manager functionality
+such as checking the health of the hosted VMware environment,
+performing capacity planning, and proactively eliminating performance
+bottlenecks. It is accessible via a web interface.</td>
+</tr>
+<tr class="row-even"><td>vRealize Automation™ virtual appliance and IaaS server</td>
+<td>The vRealize Automation virtual appliance and IaaS server are included
+if your RPC-VMware cloud includes the vRealize Automation add-on
+feature. The vRealize Automation add-on feature provides cloud
+automation, such as the ability to provide VMs and applications as
+on-demand services. The vRealize Automation appliance provides a
+management user interface, a single sign-on (SSO) service, and a
+vRealize Orchestrator instance for vRealize Automation. It is accessible
+via a web interface and a REST API. The
+vRealize Automation IaaS server enables the rapid modeling and
+provisioning of servers in the private cloud as directed by the vRealize
+Automation appliance. It includes workers and agents to integrate with
+vSphere and other infrastructure components.</td>
+</tr>
+<tr class="row-odd"><td>vRealize Business™ for Cloud virtual appliance</td>
+<td>The vRealize Business for Cloud virtual appliance is included if your
+RPC-VMware cloud includes the vRealize Business
+for Cloud add-on feature. vRealize Business for Cloud is a cloud
+planning, budgeting, and cost visibility tool that helps to make
+decisions for your private cloud. It is used to establish costs and
+pricing, make cost base decisions, and provide information for
+chargeback. It is accessible via a web client and a public API.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

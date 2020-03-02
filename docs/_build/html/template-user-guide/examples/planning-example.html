@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Planning (example) &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-api-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Planning (example)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-user-guide/examples/planning-example.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="planning-example">
+<span id="planning-example-ug"></span><h1>Planning (example)<a class="headerlink" href="#planning-example" title="Permalink to this headline">¶</a></h1>
+<p>This topic describes what you need to know and do before you run the playbooks
+that install Object Storage.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#installation-architecture" id="id1">Installation architecture</a></li>
+<li><a class="reference internal" href="#configure-and-mount-storage-devices" id="id2">Configure and mount storage devices</a></li>
+<li><a class="reference internal" href="#create-networks" id="id3">Create networks</a></li>
+</ul>
+</div>
+<div class="section" id="installation-architecture">
+<h2>Installation architecture<a class="headerlink" href="#installation-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The following diagram shows one possible configuration for a minimal
+installation of Object Storage. In this example, each storage node is a
+separate zone in the ring. At a minimum, five zones are recommended. To
+increase reliability and performance, you can add additional proxy nodes.</p>
+<div class="figure">
+<img alt="Object Storage architecture" src="../../_images/swift_install_arch.png" />
+</div>
+</div>
+<div class="section" id="configure-and-mount-storage-devices">
+<h2>Configure and mount storage devices<a class="headerlink" href="#configure-and-mount-storage-devices" title="Permalink to this headline">¶</a></h2>
+<p>Before you can install Object Storage for RPCO, you must configure and mount
+the storage devices. Object Storage for RPCO requires a minimum of three object
+storage devices with mounted storage drives.</p>
+<p>The example commands in this procedure assume that the storage devices are
+labeled <code class="docutils literal notranslate"><span class="pre">sdc</span></code> through <code class="docutils literal notranslate"><span class="pre">sdg</span></code>.</p>
+<ol class="arabic">
+<li><p class="first">Determine the storage devices on the node to use for Object Storage.</p>
+</li>
+<li><p class="first">Format each of these devices with XFS. While formatting the devices, add a
+unique label for each device.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Without labels, a failed drive can cause mount points to shift and
+data to become inaccessible.</p>
+</div>
+<p>For example, create the file systems on the devices by using the
+<strong>mkfs</strong> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> apt-get -y install xfsprogs
+
+<span class="gp">$</span> mkfs.xfs -f -i <span class="nv">size</span><span class="o">=</span><span class="m">1024</span> -L sdc /dev/sdc
+<span class="gp">$</span> mkfs.xfs -f -i <span class="nv">size</span><span class="o">=</span><span class="m">1024</span> -L sdd /dev/sdd
+<span class="gp">$</span> mkfs.xfs -f -i <span class="nv">size</span><span class="o">=</span><span class="m">1024</span> -L sde /dev/sde
+<span class="gp">$</span> mkfs.xfs -f -i <span class="nv">size</span><span class="o">=</span><span class="m">1024</span> -L sdf /dev/sdf
+<span class="gp">$</span> mkfs.xfs -f -i <span class="nv">size</span><span class="o">=</span><span class="m">1024</span> -L sdg /dev/sdg
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the mount locations to the <code class="docutils literal notranslate"><span class="pre">/etc/fstab</span></code> file so that the
+storage devices are remounted on boot. The following example mount
+options are recommended when using XFS.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Finish all modifications to the <code class="docutils literal notranslate"><span class="pre">/etc/fstab</span></code> file before mounting
+the new file systems created within the storage devices.</p>
+</div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">LABEL</span><span class="o">=</span><span class="s">sdc /srv/node/sdc xfs noatime,nodiratime,nobarrier,logbufs=8 0 0</span>
+<span class="na">LABEL</span><span class="o">=</span><span class="s">sdd /srv/node/sdd xfs noatime,nodiratime,nobarrier,logbufs=8 0 0</span>
+<span class="na">LABEL</span><span class="o">=</span><span class="s">sde /srv/node/sde xfs noatime,nodiratime,nobarrier,logbufs=8 0 0</span>
+<span class="na">LABEL</span><span class="o">=</span><span class="s">sdf /srv/node/sdf xfs noatime,nodiratime,nobarrier,logbufs=8 0 0</span>
+<span class="na">LABEL</span><span class="o">=</span><span class="s">sdg /srv/node/sdg xfs noatime,nodiratime,nobarrier,logbufs=8 0 0</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create the mount points for the devices by using the <strong>mkdir</strong> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir -p /srv/node/sdc
+<span class="gp">$</span> mkdir -p /srv/node/sdd
+<span class="gp">$</span> mkdir -p /srv/node/sde
+<span class="gp">$</span> mkdir -p /srv/node/sdf
+<span class="gp">$</span> mkdir -p /srv/node/sdg
+</pre></div>
+</div>
+<p>The mount point is referenced as the <code class="docutils literal notranslate"><span class="pre">mount_point</span></code> parameter in the
+<code class="docutils literal notranslate"><span class="pre">swift.yml</span></code> file (<code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/conf.d/swift.yml</span></code>).</p>
+</li>
+<li><p class="first">Mount the storage devices by using the <strong>mount</strong> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mount /srv/node/sdc
+<span class="gp">$</span> mount /srv/node/sdd
+<span class="gp">$</span> mount /srv/node/sde
+<span class="gp">$</span> mount /srv/node/sdf
+<span class="gp">$</span> mount /srv/node/sdg
+</pre></div>
+</div>
+</li>
+</ol>
+<p>For the devices mounted in the preceding steps, the mount locations would be as
+follows:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Device</th>
+<th class="head">Mount location</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/dev/sdc</td>
+<td>/srv/node/sdc</td>
+</tr>
+<tr class="row-odd"><td>/dev/sdd</td>
+<td>/srv/node/sdd</td>
+</tr>
+<tr class="row-even"><td>/dev/sde</td>
+<td>/srv/node/sde</td>
+</tr>
+<tr class="row-odd"><td>/dev/sdf</td>
+<td>/srv/node/sdf</td>
+</tr>
+<tr class="row-even"><td>/dev/sdg</td>
+<td>/srv/node/sdg</td>
+</tr>
+</tbody>
+</table>
+<p>The entry in the <code class="docutils literal notranslate"><span class="pre">swift.yml</span></code> for the mounted devices would be as follows:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1">#    drives:</span>
+<span class="c1">#        - name: sdc</span>
+<span class="c1">#        - name: sdd</span>
+<span class="c1">#        - name: sde</span>
+<span class="c1">#        - name: sdf</span>
+<span class="c1">#        - name: sdg</span>
+<span class="c1">#    mount_point: /srv/node</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-networks">
+<h2>Create networks<a class="headerlink" href="#create-networks" title="Permalink to this headline">¶</a></h2>
+<p>The next step in preparing for the installation of Object Storage for RPCO is
+creating the networks that are needed. Object Storage for RPCO requires the
+<code class="docutils literal notranslate"><span class="pre">br-storage</span></code> and <code class="docutils literal notranslate"><span class="pre">br-mgmt</span></code> networks. These networks are specified in the
+<code class="docutils literal notranslate"><span class="pre">provider_networks</span></code> section of the
+<code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/openstack_user_config.yml</span></code> file.</p>
+<ol class="arabic">
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/openstack_user_config.yml</span></code> file for
+editing.</p>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">provider_networks</span></code> section, add the following network information:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># provider_networks</span>
+<span class="c1">#   - network:</span>
+<span class="c1">#       container_bridge: &quot;br-mgmt&quot;</span>
+<span class="c1">#       container_interface: &quot;eth1&quot;</span>
+<span class="c1">#       ip_from_q: &quot;container&quot;</span>
+<span class="c1">#       group_binds:</span>
+<span class="c1">#         - all_containers</span>
+<span class="c1">#         - all hosts</span>
+<span class="c1">#   - network:</span>
+<span class="c1">#       container_bridge: &quot;br-storage&quot;</span>
+<span class="c1">#       container_interface: &quot;eth2&quot;</span>
+<span class="c1">#       ip_from_q: &quot;storage&quot;</span>
+<span class="c1">#       group_binds:</span>
+<span class="c1">#         - glance_api</span>
+<span class="c1">#         - cinder_api</span>
+<span class="c1">#         - cinder_volume</span>
+<span class="c1">#         - nova_compute</span>
+<span class="c1">#         - swift_proxy</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

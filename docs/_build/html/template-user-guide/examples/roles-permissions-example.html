@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Roles and permissions (example) &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-api-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Roles and permissions (example)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-user-guide/examples/roles-permissions-example.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="roles-and-permissions-example">
+<span id="roles-permissions-example-ug"></span><h1>Roles and permissions (example)<a class="headerlink" href="#roles-and-permissions-example" title="Permalink to this headline">¶</a></h1>
+<p>Because vCloud Director is a cloud portal that abstracts the resources of
+the underlying RPC-VMware environment, your use of the underlying
+RPC-VMware services is limited to read-only access to the vCenter Server
+user interface and APIs. Although the features listed in the RPC-VMware
+handbook are still available, you can consume those features only as
+they are enabled in the customer role of the vCloud Director services or
+by opening a ticket with Rackspace support to make modifications to the
+underlying RPC-VMware services and environment.</p>
+<div class="section" id="predefined-roles">
+<h2>Predefined roles<a class="headerlink" href="#predefined-roles" title="Permalink to this headline">¶</a></h2>
+<p>To implement the separation of customer and Rackspace duties in
+RPC-VMware, Rackspace uses built-in roles in vCloud Director. Rackspace
+assigns you a maximum permission role (Organization Administrator) and
+any lesser privileged roles that you request for specific users or
+groups.</p>
+<p>Predefined roles and the permissions that they contain are available in all
+organizations. All of the roles in the following table are available
+for the customer. Rackspace support has the System Administrator role at the
+System organization level, which is used to manage the vCloud Director
+configurations.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Role</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Organization Administrator</td>
+<td>After creating an organization, Rackspace assigns the role of
+Organization Administrator to the user or group provided by the
+customer. Users with the Organization Administrator role can use the
+vCloud Director Web console or the vCloud API to manage users and
+groups in their organization and assign them roles, including the
+Organization Administrator role. A user with this role can use the
+vCloud API to create or update role objects that are local to the
+organization. Roles created or modified by an organization
+administrator are not visible to other organizations.</td>
+</tr>
+<tr class="row-odd"><td>Catalog Author</td>
+<td>The permissions associated with the Catalog Author role allow a user to
+create and publish catalogs.</td>
+</tr>
+<tr class="row-even"><td>vApp Author</td>
+<td>The permissions associated with the vApp Author role allow a user to use
+catalogs and create vApps.</td>
+</tr>
+<tr class="row-odd"><td>vApp User</td>
+<td>The permissions associated with the vApp User role allow a user to use
+existing vApps.</td>
+</tr>
+<tr class="row-even"><td>Console Access Only</td>
+<td>The permissions associated with the Console Access Only role allow a
+user to view VM states and properties and to use the guest OS.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="permissions">
+<h2>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h2>
+<p>Customers have the permissions to create, delete, and manage VMs within their
+vCloud Director. Rackspace manages the vCloud Director Server, vCenter
+Server, and ESXi hosts. Customers have limited permissions on hosts and
+servers. The following tables detail the vCloud Director permissions for
+the predefined roles that can be assigned for customer use.</p>
+<p><strong>Permissions associated with catalogs</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Permission</th>
+<th class="head">Description</th>
+<th class="head">Admin</th>
+<th class="head">Catalog Author</th>
+<th class="head">vApp Author</th>
+<th class="head">vApp User</th>
+<th class="head">Console Access Only</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Catalog: Add vApp from My Cloud</td>
+<td>Permission to add a vApp to a catalog from My Cloud.</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Catalog: Change Owner</td>
+<td>Permission to change the owner of a catalog.</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Catalog: Create or delete a Catalog</td>
+<td>Permission to create and delete catalogs.</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Catalog: Edit Catalog Properties</td>
+<td>Permission to edit catalog properties.</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Catalog: Allow External Publishing or Subscriptions for the Catalogs</td>
+<td>Permission to publish catalogs for external consumption and to
+subscribe to external catalog feeds.</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Catalog: Share a Catalog to Users or Groups within Current Organization</td>
+<td>Permission to share catalogs to users and groups in the same
+organization.</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Catalog: View Private and Shared Catalogs within Current Organization</td>
+<td>Permission to view both private and shared catalogs in the organization.</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Catalog: View Shared Catalogs from Other Organizations</td>
+<td>Permission to view catalogs shared from other organizations.</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Permissions associated with independent disks</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Permission</th>
+<th class="head">Description</th>
+<th class="head">Admin</th>
+<th class="head">Catalog Author</th>
+<th class="head">vApp Author</th>
+<th class="head">vApp User</th>
+<th class="head">Console Access Only</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Disk: Create</td>
+<td>Permission to create independent disks.</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Disk: Delete</td>
+<td>Permission to delete independent disks.</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Disk: Edit Properties</td>
+<td>Permission to edit the properties of an independent disk.</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Disk: View Properties</td>
+<td>Permission to view the properties of an independent disk.</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

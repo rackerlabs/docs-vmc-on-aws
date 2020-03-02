@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Limits &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Faults" href="faults.html" />
+    <link rel="prev" title="Paginated collections" href="paginated-collections.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../template-user-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a><ul class="current">
+<li class="toctree-l2"><a class="reference external" href="https://developer.rackspace.com/docs/{product-name}/{v#}/">Product name v#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/index.html">Getting started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">General API information</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="service-access.html">Service access endpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request-response.html">Request and response types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="product-specific-general-api-content.html">Content compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paginated-collections.html">Paginated collections</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Limits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rate-limits">Rate limits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#absolute-limits">Absolute limits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#retrieve-account-limits">Retrieve account limits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="date-time-format.html">Date and time format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api-behavior.html">API behavior and statuses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="role-based-access-control.html">Role-based access control (RBAC)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/index.html">API reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/index.html">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service-updates.html">Service updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional-resources.html">Additional resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disclaimer.html">Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a> &raquo;</li>
+        
+          <li><a href="index.html">General API information</a> &raquo;</li>
+        
+      <li>Limits</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-api-guide/general-api-info/limits.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="limits">
+<span id="id1"></span><h1>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">¶</a></h1>
+<p>All accounts, by default, have a preconfigured set of thresholds, or <em>limits</em>,
+to manage capacity and prevent abuse of the system. The system recognizes two
+kinds of limits: <em>rate limits</em> and <em>absolute limits</em>. Rate limits are
+thresholds that are reset after a certain amount of time passes. Absolute
+limits are fixed. Rate limits are processed via the <a class="reference external" href="http://www.openrepose.org">Repose service</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the default limits are too low for your particular application,
+contact Rackspace Cloud support to request an increase. All requests
+require reasonable justification.</p>
+</div>
+<div class="section" id="rate-limits">
+<span id="api-info-limits-ratelimits"></span><h2>Rate limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
+<p>Rate limits are specified in terms of both a human-readable wildcard URI and a
+machine-processable regular expression. The regular expression boundary
+matcher <code class="docutils literal notranslate"><span class="pre">^</span></code> takes effect after the root URI path. For example, the regular
+expression <code class="docutils literal notranslate"><span class="pre">^/v1.0/1234/loadbalancers</span></code> would match the
+<code class="docutils literal notranslate"><span class="pre">/v1.0/1234/loadbalancers</span></code> portion  of the following URI:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers</span></code></p>
+<span id="api-info-limits-ratelimits-default"></span><table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text"><strong>Default rate limits</strong></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="22%" />
+<col width="44%" />
+<col width="11%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">URI</th>
+<th class="head">RegEx</th>
+<th class="head">Default Limit</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GET</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">^/1.0/.*</span></code></td>
+<td>5 per second</td>
+</tr>
+<tr class="row-odd"><td>GET</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><cite>^/1.0/.*`</cite></td>
+<td>100 per minute</td>
+</tr>
+<tr class="row-even"><td>POST</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">^/1.0/.*</span></code></td>
+<td>2 per second</td>
+</tr>
+<tr class="row-odd"><td>POST</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">^/1.0/.*</span></code></td>
+<td>25 per minute</td>
+</tr>
+<tr class="row-even"><td>PUT</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><cite>^/1.0/.*`</cite></td>
+<td>5 per second</td>
+</tr>
+<tr class="row-odd"><td>PUT</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">^/1.0/.*</span></code></td>
+<td>50 per minute</td>
+</tr>
+<tr class="row-even"><td>DELETE</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><cite>^/1.0/.*`</cite></td>
+<td>2 per second</td>
+</tr>
+<tr class="row-odd"><td>DELETE</td>
+<td><code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">^/1.0/.*</span></code></td>
+<td>50 per minute</td>
+</tr>
+</tbody>
+</table>
+<p>Rate limits are applied in order relative to the method, going from least to
+most specific. For example, although the threshold for <strong>POST</strong> requests to
+<code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code>  is 25 per minute, you cannot send a <strong>POST</strong> request to
+<code class="docutils literal notranslate"><span class="pre">/v1.0/*</span></code> more than 2  times per second because the rate limit for any
+<strong>POST</strong> request is 2 per second.  If you exceed the limits established for
+your account, a <code class="docutils literal notranslate"><span class="pre">413</span> <span class="pre">(Rate</span> <span class="pre">Control)</span></code> HTTP  response is returned with a
+<code class="docutils literal notranslate"><span class="pre">Retry-After</span></code> header to notify the client when it can  attempt to try
+again.</p>
+<p>You can submit a request to Rackspace Support for an increase in load balancer
+limits. Each request must be approved before limits can be modified. Limits
+can be increased only up to the maximum limit (such as 50 nodes per load
+balancer).</p>
+<p>To find your current account settings for these limits, see
+<a class="reference internal" href="#determine-limits"><span class="std std-ref">Retrieve account limits</span></a>.</p>
+</div>
+<div class="section" id="absolute-limits">
+<h2>Absolute limits<a class="headerlink" href="#absolute-limits" title="Permalink to this headline">¶</a></h2>
+<p>Absolute limits specify the maximum number of load balancers that can exist
+per account and the maximum number of resources that can exist per load
+balancer. The batch delete limit is the exception, because it is applied per
+batch delete API request.</p>
+<p>The system applies default values for load balancer account and resource
+limits that can be increased by submitting a request to Support. Each
+request must be approved internally before limits can be modified.</p>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text"><strong>Absolute limits</strong></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="29%" />
+<col width="57%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LOADBALANCER_LIMIT</td>
+<td>Total number of load balancers that can be added to a Cloud account</td>
+<td>25</td>
+</tr>
+<tr class="row-odd"><td>NODE_LIMIT</td>
+<td>Total number of nodes that can be added to a load balancer</td>
+<td>25</td>
+</tr>
+<tr class="row-even"><td>IPV6_LIMIT</td>
+<td>Total number of IPv6 addresses that can be added to a load balancer</td>
+<td>25</td>
+</tr>
+<tr class="row-odd"><td>BATCH_DELETE_LIMIT</td>
+<td>Total number of resources that can be listed per batch delete request</td>
+<td>10</td>
+</tr>
+<tr class="row-even"><td>ACCESS_LIST_LIMIT</td>
+<td>Total number of network items that can be added to a load balancer</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>To find your current account settings for these limits, see
+<a class="reference internal" href="#determine-limits"><span class="std std-ref">Retrieve account limits</span></a>.</p>
+</div>
+<div class="section" id="retrieve-account-limits">
+<span id="determine-limits"></span><h2>Retrieve account limits<a class="headerlink" href="#retrieve-account-limits" title="Permalink to this headline">¶</a></h2>
+<p>Applications can programmatically determine current rate limits and absolute
+limits for an account by using the following URIs.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="57%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">URI</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GET</td>
+<td><code class="docutils literal notranslate"><span class="pre">/limits</span></code></td>
+<td>Return the current rate limits for the account.</td>
+</tr>
+<tr class="row-odd"><td>GET</td>
+<td><code class="docutils literal notranslate"><span class="pre">/loadbalancers/absolutelimits</span></code></td>
+<td>Return the current absolute limits for the account.</td>
+</tr>
+</tbody>
+</table>
+<p>Possible error response codes for these operations are <code class="docutils literal notranslate"><span class="pre">loadbalancerFault</span>
+<span class="pre">(400,</span> <span class="pre">500)</span></code>, <code class="docutils literal notranslate"><span class="pre">serviceUnavailable</span> <span class="pre">(503)</span></code>, <code class="docutils literal notranslate"><span class="pre">unauthorized</span> <span class="pre">(401)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">badRequest</span> <span class="pre">(400)</span></code>, and <code class="docutils literal notranslate"><span class="pre">overLimit</span> <span class="pre">(413)</span></code>.</p>
+<p>These operations do not require a request body.</p>
+<p><strong>Example: Retrieve rate limits: XML response</strong></p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">limits</span> <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://docs.openstack.org/common/api/v1.0&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">rates</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">rate</span> <span class="n">uri</span><span class="o">=</span><span class="s2">&quot;/v1.0/*&quot;</span> <span class="n">regex</span><span class="o">=</span><span class="s2">&quot;^/1.0/.*&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">limit</span>
+                <span class="n">verb</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span>
+                <span class="n">value</span><span class="o">=</span><span class="s2">&quot;600000&quot;</span>
+                <span class="n">remaining</span><span class="o">=</span><span class="s2">&quot;426852&quot;</span>
+                <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;HOUR&quot;</span>
+                <span class="nb">next</span><span class="o">-</span><span class="n">available</span><span class="o">=</span><span class="s2">&quot;2011-02-22T19:32:43.835Z&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;/</span><span class="n">rate</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">rates</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">limits</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example: Retrieve rate limits: JSON response</strong></p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;limits&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rate&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;uri&quot;</span> <span class="p">:</span> <span class="s2">&quot;/v1.0/*&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;regex&quot;</span> <span class="p">:</span> <span class="s2">&quot;^/1.0/.*&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;limit&quot;</span> <span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;verb&quot;</span> <span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">600000</span><span class="p">,</span>
+                            <span class="s2">&quot;remaining&quot;</span> <span class="p">:</span> <span class="mi">426852</span><span class="p">,</span>
+                            <span class="s2">&quot;unit&quot;</span> <span class="p">:</span> <span class="s2">&quot;HOUR&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;next-available&quot;</span> <span class="p">:</span> <span class="s2">&quot;2011-02-22T19:32:43.835Z&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example: Retrieve absolute limits: XML response</strong></p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">limits</span> <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://docs.openstack.org/loadbalancers/api/v1.0&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">absolute</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">limit</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;IPV6_LIMIT&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;25&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">limit</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;LOADBALANCER_LIMIT&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;25&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">limit</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;BATCH_DELETE_LIMIT&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">limit</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ACCESS_LIST_LIMIT&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;100&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="n">limit</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NODE_LIMIT&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;25&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">absolute</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">limits</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example: Retrieve absolute limits: JSON response</strong></p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;absolute&quot;</span><span class="p">:</span>
+        <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;IPV6_LIMIT&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;LOADBALANCER_LIMIT&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;BATCH_DELETE_LIMIT&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;ACCESS_LIST_LIMIT&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;NODE_LIMIT&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="faults.html" class="btn btn-neutral float-right" title="Faults" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="paginated-collections.html" class="btn btn-neutral" title="Paginated collections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

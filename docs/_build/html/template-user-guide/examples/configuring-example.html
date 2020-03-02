@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuring (example) &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-api-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Configuring (example)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-user-guide/examples/configuring-example.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuring-example">
+<span id="configuring-example-ug"></span><h1>Configuring (example)<a class="headerlink" href="#configuring-example" title="Permalink to this headline">¶</a></h1>
+<p>To configure stand-alone Object Storage for Rackspace Private Cloud Powered By
+Openstack (RPCO), you update the following files:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/openstack_user_config.yml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/user_osa_variables_overrides.yml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/conf.d/swift.yml</span></code></li>
+</ul>
+<div class="section" id="update-the-stand-alone-object-storage-configuration-files">
+<h2>Update the stand-alone Object Storage configuration files<a class="headerlink" href="#update-the-stand-alone-object-storage-configuration-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">openstack_user_config.yml</span></code> file, set the <code class="docutils literal notranslate"><span class="pre">identity_hosts</span></code> and
+<code class="docutils literal notranslate"><span class="pre">shared-infra_hosts</span></code> entries to the following values to set up the
+Identity and infrastructure services. The following example shows <code class="docutils literal notranslate"><span class="pre">node1</span></code>
+through <code class="docutils literal notranslate"><span class="pre">node3</span></code>. The values must be adjusted for all <code class="docutils literal notranslate"><span class="pre">identity_hosts</span></code>
+and <code class="docutils literal notranslate"><span class="pre">shared-infra_hosts</span></code> entries.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># identity_hosts:</span>
+<span class="c1">#   node1:</span>
+<span class="c1">#     ip: 192.168.100.1</span>
+<span class="c1">#   node2:</span>
+<span class="c1">#     ip: 192.168.100.2</span>
+<span class="c1">#   node3:</span>
+<span class="c1">#     ip: 192.168.100.3</span>
+<span class="c1"># shared-infra_hosts:</span>
+<span class="c1">#   node1:</span>
+<span class="c1">#     ip: 192.168.100.1</span>
+<span class="c1">#   node2:</span>
+<span class="c1">#     ip: 192.168.100.2</span>
+<span class="c1">#   node3:</span>
+<span class="c1">#     ip: 192.168.100.3</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">user_osa_variables_overrides.yml</span></code> file, update the
+following user variables.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">rackspace_cloud</span></code> variables are needed only if you are using
+the Rackspace Monitoring service.</p>
+</div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># container_openstack_password:</span>
+<span class="c1"># keystone_auth_admin_password:</span>
+<span class="c1"># keystone_auth_admin_token:</span>
+<span class="c1"># keystone_container_mysql_password:</span>
+<span class="c1"># keystone_service_password:</span>
+<span class="c1"># memcached_encryption_key:</span>
+<span class="c1"># mysql_debian_sys_maint_password:</span>
+<span class="c1"># mysql_root_password:</span>
+<span class="c1"># rabbitmq_cookie_token:</span>
+<span class="c1"># rabbitmq_password:</span>
+<span class="c1"># rackspace_cloud_api_key:</span>
+<span class="c1"># rackspace_cloud_auth_url:</span>
+<span class="c1"># rackpace_cloud_password:</span>
+<span class="c1"># rackspace_cloud_tenant_id:</span>
+<span class="c1"># rackspace_cloud_username:</span>
+<span class="c1"># rackspace_cloudfiles_tenant_id:</span>
+<span class="c1"># rpc_support_holland_password:</span>
+<span class="c1"># swift_container_mysql_password:</span>
+<span class="c1"># swift_hash_path_prefix:</span>
+<span class="c1"># swift_hash_path_suffix:</span>
+<span class="c1"># swift_service_password:</span>
+<span class="c1"># swift_dispersion_user:</span>
+<span class="c1"># swift_dispersion_password:</span>
+<span class="c1"># service_syslog:</span>
+<span class="c1"># galera_root_password:</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/conf.d/swift.yml</span></code> file, update the
+<code class="docutils literal notranslate"><span class="pre">global_overrides</span></code> values as shown in the following example. The
+parameters are explained following the example.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># global_overrides:</span>
+<span class="c1">#   swift:</span>
+<span class="c1">#     part_power: 8</span>
+<span class="c1">#     weight: 100</span>
+<span class="c1">#     min_part_hours: 1</span>
+<span class="c1">#     repl_number: 3</span>
+<span class="c1">#     storage_network: &#39;br-storage&#39;</span>
+<span class="c1">#     replication_network: &#39;br-repl&#39;</span>
+<span class="c1">#     drives:</span>
+<span class="c1">#       - name: sdc</span>
+<span class="c1">#       - name: sdd</span>
+<span class="c1">#       - name: sde</span>
+<span class="c1">#       - name: sdf</span>
+<span class="c1">#     mount_point: /mnt</span>
+<span class="c1">#     account:</span>
+<span class="c1">#     container:</span>
+<span class="c1">#     storage_policies:</span>
+<span class="c1">#       - policy:</span>
+<span class="c1">#           name: gold</span>
+<span class="c1">#           index: 0</span>
+<span class="c1">#           default: True</span>
+<span class="c1">#       - policy:</span>
+<span class="c1">#           name: silver</span>
+<span class="c1">#           index: 1</span>
+<span class="c1">#           repl_number: 3</span>
+<span class="c1">#           deprecated: True</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">part_power</span></code></dt>
+<dd><p class="first last">Set the partition power value based on the total amount of
+storage that the entire ring will use.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">weight</span></code></dt>
+<dd><p class="first last">The default weight is 100. If the drives are different sizes, set
+the weight value to avoid uneven distribution of data. For
+example, a 1 TB disk would have a weight of 100, while a 2 TB
+drive would have a weight of 200.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">min_part_hours</span></code></dt>
+<dd><p class="first last">The default value is 1. Set the minimum partition hours to the
+amount of time to lock a partition’s replicas after a partition
+has been moved. Moving multiple replicas at the same time might
+make data inaccessible. This value can be set separately in the
+<code class="docutils literal notranslate"><span class="pre">swift</span></code>, <code class="docutils literal notranslate"><span class="pre">container</span></code>, <code class="docutils literal notranslate"><span class="pre">account</span></code>, and <code class="docutils literal notranslate"><span class="pre">policy</span></code> sections,
+with the value in other sections superseding the value in the
+<code class="docutils literal notranslate"><span class="pre">swift</span></code> section.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">repl_number</span></code></dt>
+<dd><p class="first last">The default value is 3. Set the replication number to the number
+of replicas of each object. This value can be set separately in
+the <code class="docutils literal notranslate"><span class="pre">swift</span></code>, <code class="docutils literal notranslate"><span class="pre">container</span></code>, <code class="docutils literal notranslate"><span class="pre">account</span></code>, and <code class="docutils literal notranslate"><span class="pre">policy</span></code> sections,
+with the value in the other sections superseding the value in the
+<code class="docutils literal notranslate"><span class="pre">swift</span></code> section.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">storage_network</span></code></dt>
+<dd><p class="first last">By default, the swift services will listen on the default
+management IP address. Optionally, specify the interface of the storage
+network.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">replication_network</span></code></dt>
+<dd><p class="first last">Optionally, specify a dedicated replication network interface, so
+dedicated replication can be set up. If this value is not
+specified, no dedicated replication network is set.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">drives</span></code></dt>
+<dd><p class="first last">Set the default drives per host. This is useful when all hosts
+have the same drives. These values can be overridden for each host.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mount_point</span></code></dt>
+<dd><p class="first last">Set the <code class="docutils literal notranslate"><span class="pre">mount_point</span></code> value to the location where the swift
+drives are mounted. For example, with a mount point of <code class="docutils literal notranslate"><span class="pre">/mnt</span></code>
+and a drive of <code class="docutils literal notranslate"><span class="pre">sdc</span></code>, a drive is mounted at <code class="docutils literal notranslate"><span class="pre">/mnt/sdc</span></code> on the
+swift host. This value can be overridden for each host.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">storage_policies</span></code></dt>
+<dd><p class="first last">Storage policies determine on which hardware data is stored, how
+the data is stored across that hardware, and in which region the
+data resides. Each storage policy must have an unique <code class="docutils literal notranslate"><span class="pre">name</span></code>
+and a unique <code class="docutils literal notranslate"><span class="pre">index</span></code> value. There must be a storage policy with an
+index of 0 in the <code class="docutils literal notranslate"><span class="pre">swift.yml</span></code> file to use any legacy containers
+created before storage policies were instituted.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">default</span></code></dt>
+<dd><p class="first last">Set the <code class="docutils literal notranslate"><span class="pre">default</span></code> value to <code class="docutils literal notranslate"><span class="pre">yes</span></code> for at least one policy. This policy
+is the default storage policy for any non-legacy containers that are
+created.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">deprecated</span></code></dt>
+<dd><p class="first last">Set the <code class="docutils literal notranslate"><span class="pre">deprecated</span> <span class="pre">``value</span> <span class="pre">to</span> <span class="pre">``yes</span></code> to turn off storage policies.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/conf.d/swift.yml</span></code> file, update the Object
+Storage proxy hosts values by setting the IP address of the hosts to which
+Ansible will connect to deploy the swift-proxy containers. The
+<code class="docutils literal notranslate"><span class="pre">swift-proxy_hosts</span></code> value should match the infra nodes.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># swift-proxy_hosts:</span>
+<span class="c1">#   infra-node1:</span>
+<span class="c1">#     ip: 192.0.2.1</span>
+<span class="c1">#   infra-node2:</span>
+<span class="c1">#     ip: 192.0.2.2</span>
+<span class="c1">#   infra-node3:</span>
+<span class="c1">#     ip: 192.0.2.3</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify that the <code class="docutils literal notranslate"><span class="pre">swift.yml</span></code> file is in the
+<code class="docutils literal notranslate"><span class="pre">/etc/openstack_deploy/conf.d/</span></code> folder.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="allow-identity-users-to-use-object-storage">
+<h2>Allow Identity users to use Object Storage<a class="headerlink" href="#allow-identity-users-to-use-object-storage" title="Permalink to this headline">¶</a></h2>
+<p>Users with the <code class="docutils literal notranslate"><span class="pre">_member_</span></code> role are authorized Identity (keystone)
+users. You can allow these users to create containers and upload
+objects to Object Storage by opening the
+<code class="docutils literal notranslate"><span class="pre">user_osa_variables_overrides.yml</span></code> file for editing and setting
+<code class="docutils literal notranslate"><span class="pre">swift_allow_all_users</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If this value is <code class="docutils literal notranslate"><span class="pre">False</span></code>, then by default, only users with the
+<code class="docutils literal notranslate"><span class="pre">admin</span></code> or <code class="docutils literal notranslate"><span class="pre">swiftoperator</span></code> role are allowed to create containers or
+manage projects.</p>
+</div>
+<p>When the back-end type for the Image service (glance) is set to
+<code class="docutils literal notranslate"><span class="pre">swift</span></code>, the Image service can access the Object Storage cluster
+regardless of whether this value is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

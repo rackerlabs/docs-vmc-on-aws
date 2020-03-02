@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;officialProjectName&gt; concepts &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Create and manage load balancers" href="using-cloud-load-balancers.html" />
+    <link rel="prev" title="Authenticate to the Rackspace Cloud" href="authenticate.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../template-user-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a><ul class="current">
+<li class="toctree-l2"><a class="reference external" href="https://developer.rackspace.com/docs/{product-name}/{v#}/">Product name v#</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Getting started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="get-credentials-include.html">Get your credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install-CLI-client.html">Install CLI clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="send-request-ovw.html">Send API requests to &lt;officialProjectName&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authenticate.html">Authenticate to the Rackspace Cloud</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">&lt;officialProjectName&gt; concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load-balancer">Load balancer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#virtual-ip">Virtual IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#error-page">Error page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#node">Node</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="using-cloud-load-balancers.html">Create and manage load balancers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../general-api-info/index.html">General API information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/index.html">API reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes/index.html">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service-updates.html">Service updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional-resources.html">Additional resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disclaimer.html">Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a> &raquo;</li>
+        
+          <li><a href="index.html">Getting started</a> &raquo;</li>
+        
+      <li>&lt;officialProjectName&gt; concepts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-api-guide/getting-started/concepts.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="service-concepts">
+<span id="concepts"></span><h1>&lt;officialProjectName&gt; concepts<a class="headerlink" href="#service-concepts" title="Permalink to this headline">¶</a></h1>
+<p>To use the &lt;officialProjectName API&gt; effectively, you should understand several key
+concepts.</p>
+<div class="section" id="load-balancer">
+<span id="concept-load-balancer"></span><h2>Load balancer<a class="headerlink" href="#load-balancer" title="Permalink to this headline">¶</a></h2>
+<p>A logical device that belongs to a cloud account. A load balancer is used to
+distribute workloads between multiple back-end systems or services, based on
+the criteria that is defined as part of its configuration.</p>
+</div>
+<div class="section" id="virtual-ip">
+<span id="concept-virtual-ip"></span><h2>Virtual IP<a class="headerlink" href="#virtual-ip" title="Permalink to this headline">¶</a></h2>
+<p>An Internet Protocol (IP) address configured on the load balancer for use by
+clients connecting to a service that is load balanced. Incoming connections are
+distributed to back-end nodes based on the configuration of the load balancer.</p>
+</div>
+<div class="section" id="error-page">
+<span id="concept-error-page"></span><h2>Error page<a class="headerlink" href="#error-page" title="Permalink to this headline">¶</a></h2>
+<p>The HTML file that is shown to the end user when an error in the service is
+generated. By default, every virtual server is provided with the default error
+file. It is also possible to submit a custom error page via the Load Balancers
+API.</p>
+</div>
+<div class="section" id="node">
+<span id="concept-node"></span><h2>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h2>
+<p>A back-end device that provides a service on a specified IP address and port.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="using-cloud-load-balancers.html" class="btn btn-neutral float-right" title="Create and manage load balancers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authenticate.html" class="btn btn-neutral" title="Authenticate to the Rackspace Cloud" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

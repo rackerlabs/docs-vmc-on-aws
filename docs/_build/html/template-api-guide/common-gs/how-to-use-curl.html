@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Convert cURL examples to run on Windows &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../template-user-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Convert cURL examples to run on Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-api-guide/common-gs/how-to-use-curl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p id="how-curl-commands-work">cURL is a command-line tool that you can use to interact with REST interfaces.
+cURL lets you transmit and receive HTTP requests and responses from the command
+line or a shell script, which enables you to work with the API directly. cURL
+is available for Linux® distributions, Mac OS X®, and Microsoft Windows®. For
+information about cURL, see <a class="reference external" href="http://curl.haxx.se/">http://curl.haxx.se/</a>.</p>
+<p>To run the cURL request examples shown in this guide on Mac OS X or another
+Linux-based operating system, you should be able to copy each example directly
+to the command line or a script.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using Microsoft Windows, you need to adjust the cURL examples to
+run them. See
+<a class="reference internal" href="../getting-started/send-request-ovw.html#convert-curl-examples-for-windows"><span class="std std-ref">Convert cURL examples to run on Windows </span></a>.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The cURL examples in this guide are provided for reference only. Because
+the use of cURL has environmental dependencies, copying and pasting the
+examples might not work in your environment.</p>
+</div>
+<p id="auth-curl-json">The following example shows a cURL command for sending an authentication
+request to the Identity service.</p>
+<p><strong>Example: cURL command for sending a JSON request</strong></p>
+<div class="code highlight-default notranslate" id="auth-curl-request"><div class="highlight"><pre><span></span>$ curl https://identity.api.rackspacecloud.com/v2.0/tokens  \
+   -X POST \
+   -d
+   &#39;{&quot;auth&quot;:{&quot;RAX-KSKEY:apiKeyCredentials&quot;:{&quot;username&quot;:&quot;yourUserName&quot;,&quot;api
+   Key&quot;:&quot;$apiKey&quot;}}}&#39; \
+   -H &quot;Content-type: application/json&quot; | python -m json.tool
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">$apiKey</span></code> is an environment variable that stores your API
+key value. Environment variables make it easier to reference account
+information in API requests, to reuse the same cURL commands with different
+credentials, and to keep sensitive information like your API key from being
+exposed when you send requests to Rackspace Cloud API services. For details
+about creating environment variables, see <a class="reference internal" href="../getting-started/authenticate.html#configure-environment-variables"><span class="std std-ref">Configure environment variables</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The cURL request examples use a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) as a line-continuation
+symbol, which allows the command to continue across multiple lines.</p>
+</div>
+<p>The cURL examples in this guide use the following command-line options.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>-d</strong></td>
+<td>Sends the specified data in a <strong>POST</strong> request to the HTTP server. Use
+this option to send a JSON request body to the server.</td>
+</tr>
+<tr class="row-odd"><td><strong>-H</strong></td>
+<td><p class="first">Specifies an extra HTTP header in the request. You can specify any
+number of extra headers. Precede each header with the <code class="docutils literal notranslate"><span class="pre">-H</span></code> option.</p>
+<p>Common headers in Rackspace API requests are as follows:</p>
+<ul class="last">
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code>: Required for operations with a request body.</p>
+<p>Specifies the format of the request body. Following is the syntax
+for the header where format is <code class="docutils literal notranslate"><span class="pre">json</span></code>:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">X-Auth-Token</span></code>: Required. Specifies the authentication
+token.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">X-Auth-Project-Id</span></code>: Optional. Specifies the project ID,
+which can be your account number or another value.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Accept</span></code>: Optional. Specifies the format of the response
+body.</p>
+<p>Following is the syntax for the header where the format is
+<code class="docutils literal notranslate"><span class="pre">json</span></code>, which is the default:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><strong>-i</strong></td>
+<td>Includes the HTTP header in the output.</td>
+</tr>
+<tr class="row-odd"><td><strong>-s</strong></td>
+<td><p class="first">Specifies silent or quiet mode, which makes cURL mute. No progress or
+error messages are shown.</p>
+<p class="last">If your cURL command is not generating any output, try replacing the
+<code class="docutils literal notranslate"><span class="pre">-s</span></code> option with <code class="docutils literal notranslate"><span class="pre">-i</span></code>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><strong>-T</strong></td>
+<td>Transfers the specified local file to the remote URL.</td>
+</tr>
+<tr class="row-odd"><td><strong>-X</strong></td>
+<td>Specifies the request method to use when communicating with the HTTP
+server. The specified method is used instead of the default method,
+which is <strong>GET</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>For commands that return a response, you can use json.tool to pretty-print the
+output. Append the following command to the cURL call:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">json</span><span class="o">.</span><span class="n">tool</span>
+</pre></div>
+</div>
+<p>To use json.tool, import the JSON module. For information about json.tool, see
+<a class="reference external" href="http://docs.python.org/2/library/json.html">JSON encoder and decoder</a>.</p>
+<p>If you run a Python version earlier than 2.6, import the simplejson module and
+use simplejson.tool. For information about simplejson.tool, see
+<a class="reference external" href="https://simplejson.readthedocs.io/en/latest">simplejson encoder and decoder</a>.</p>
+<p>If you do not want to pretty-print JSON output, omit this code.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your request includes the <code class="docutils literal notranslate"><span class="pre">-i</span></code> option to show header output, do not try
+to pretty-print the output. Header information is not in JSON format, and
+the API service returns an error if you specify json.tool.</p>
+</div>
+<div class="section" id="convert-curl-examples-to-run-on-windows">
+<span id="convert-curl-examples-for-windows"></span><h1>Convert cURL examples to run on Windows<a class="headerlink" href="#convert-curl-examples-to-run-on-windows" title="Permalink to this headline">¶</a></h1>
+<p>The cURL examples in the Rackspace API documentation use syntax supported on
+Mac OS® X, Linux, and UNIX systems. Microsoft Windows does not support the same
+format. However, you can run the examples on Windows after making the following
+changes:</p>
+<ul class="simple">
+<li>Replace all the line-continuation backslash characters (<code class="docutils literal notranslate"><span class="pre">\</span></code>) with a caret
+(<code class="docutils literal notranslate"><span class="pre">^</span></code>), and remove any trailing spaces after the <code class="docutils literal notranslate"><span class="pre">^</span></code>.</li>
+<li>If an example includes JSON data, export the data to a text file. When you
+run the cURL command, use the <code class="docutils literal notranslate"><span class="pre">&#64;filename</span></code> syntax to import the JSON data.
+Save the JSON data files in a directory, and run cURL commands from that
+directory.</li>
+</ul>
+<p>The following example shows the cURL format for Linux and UNIX systems:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl https://identity.api.rackspacecloud.com/v2.0/tokens  \
+      -X POST \
+      -d
+      &#39;{&quot;auth&quot;:{&quot;RAX-KSKEY:apiKeyCredentials&quot;:{&quot;username&quot;:&quot;yourUserName&quot;,
+      &quot;apiKey&quot;:&quot;$apiKey&quot;}}}&#39; \
+      -H &quot;Content-type: application/json&quot;
+</pre></div>
+</div>
+<p>The following example shows the same request with the changes made for Windows
+systems:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl https://identity.api.rackspacecloud.com/v2.0/tokens  ^
+       -X POST ^
+       -d @credentials.txt  ^
+       -H &quot;Content-type: application/json&quot;
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

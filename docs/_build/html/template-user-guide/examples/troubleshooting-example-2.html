@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshooting (example of one issue) &mdash; &lt;OFFICIAL PROEJCT NAME&gt; 1.8.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bespoke.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/bolditalic.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> <OFFICIAL PROEJCT NAME>
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Rackspace &lt;PRODUCT NAME&gt; vN User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-api-guide/index.html">Rackspace &lt;PRODUCT NAME&gt; API &lt;version&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template-simple-project/index.html">Rackspace &lt;PRODUCT NAME&gt; &lt;Type of Doc&gt;</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"><OFFICIAL PROEJCT NAME></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Troubleshooting (example of one issue)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/template-user-guide/examples/troubleshooting-example-2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshooting-example-of-one-issue">
+<span id="troubleshooting-example-2-ug"></span><h1>Troubleshooting (example of one issue)<a class="headerlink" href="#troubleshooting-example-of-one-issue" title="Permalink to this headline">¶</a></h1>
+<p>More than half of all deployment issues involve an offline website. The causes
+of a website being offline are often easy to fix. This section describes how to
+troubleshoot an offline website.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This information requires that you have knowledge of networking tools such
+as <code class="docutils literal notranslate"><span class="pre">ping</span></code>, <code class="docutils literal notranslate"><span class="pre">nmap</span></code>, and <code class="docutils literal notranslate"><span class="pre">traceroute</span></code>.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Before troubleshooting your site, gather the following information:</p>
+<ul class="simple">
+<li>The URL of the website</li>
+<li>The name and IP address of the server that hosts the site</li>
+<li>A list of the methods that you have tried to resolve the issues</li>
+</ul>
+</div>
+<div class="section" id="troubleshooting-steps">
+<h2>Troubleshooting steps<a class="headerlink" href="#troubleshooting-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Try to access the website through a web browser.</p>
+<ul>
+<li><p class="first">If the site does not load or you receive a <code class="docutils literal notranslate"><span class="pre">Server</span> <span class="pre">Not</span> <span class="pre">Found</span></code> message,
+skip to step 2.</p>
+</li>
+<li><p class="first">If the site loads but an error page is visible, review the current
+deployment configuration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Rackspace Support can’t assist with configuration errors.</p>
+</div>
+</li>
+<li><p class="first">If the site loads and functions as intended, load the site through a
+different web browser. It is possible that you are experiencing network
+issues.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Ping the web server by using the server’s IP address.</p>
+<ul>
+<li><p class="first">If packets are transmitted and received, skip to step 3.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping 104.130.8.75
+PING 104.130.8.75 (104.130.8.75) 56(84) bytes of data.
+64 bytes from 104.130.8.75: icmp_seq=1 ttl=55 time=32.3 ms
+64 bytes from 104.130.8.75: icmp_seq=2 ttl=55 time=32.3 ms
+64 bytes from 104.130.8.75: icmp_seq=3 ttl=55 time=32.3 ms
+64 bytes from 104.130.8.75: icmp_seq=4 ttl=55 time=32.2 ms
+64 bytes from 104.130.8.75: icmp_seq=5 ttl=55 time=32.3 ms
+^C
+--- 104.130.8.75 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 32.283/32.346/32.377/0.118 ms
+</pre></div>
+</div>
+</li>
+<li><p class="first">If no packets are received, skip to the “Test your connection by using
+the server’s console” section.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping 50.51.225.132
+PING 50.51.225.132 (50.51.225.132) 56(84) bytes of data.
+^C
+--- 50.51.225.132 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 3999ms
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Ping the website by using the host name.</p>
+<ul>
+<li><p class="first">If packets are transmitted and received, skip to step 4.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ ping website.com
+PING website.com (104.130.7.75) 56(84) bytes of data.
+64 bytes from 104.130.7.75: icmp_seq=1 ttl=55 time=32.4 ms
+64 bytes from 104.130.7.75: icmp_seq=2 ttl=55 time=32.2 ms
+64 bytes from 104.130.7.75: icmp_seq=3 ttl=55 time=32.2 ms
+64 bytes from 104.130.7.75: icmp_seq=4 ttl=55 time=32.2 ms
+64 bytes from 104.130.7.75: icmp_seq=5 ttl=55 time=32.2 ms
+^C
+--- website.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 32.208/32.261/32.429/0.141 ms
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you receive a <code class="docutils literal notranslate"><span class="pre">ping:</span> <span class="pre">unknown</span> <span class="pre">host</span></code> response, check the DNS settings
+for a missing or misconfigured A record.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Run the <code class="docutils literal notranslate"><span class="pre">nmap</span></code> command on the IP address of the server.</p>
+<ul>
+<li><p class="first">If port 80 is shown as <code class="docutils literal notranslate"><span class="pre">open</span></code> and using <code class="docutils literal notranslate"><span class="pre">http</span></code>, skip to the “Test
+your connection by using server’s console” section.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ nmap website.com
+
+Starting Nmap 5.51 ( http://nmap.org ) at 2016-08-25 12:23 UTC
+Nmap scan report for website.com (104.130.8.75)
+Host is up (0.0000060s latency).
+rDNS record for 104.130.8.75: elector
+Not shown: 997 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
+</pre></div>
+</div>
+</li>
+<li><p class="first">If port 80 is shown as <code class="docutils literal notranslate"><span class="pre">closed</span></code> or <code class="docutils literal notranslate"><span class="pre">filtered</span></code>, ensure that the web
+service for the server is running and that port 80 is open on the
+server’s firewall.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ nmap -Pn -p 443 website.com
+
+Starting Nmap 5.51 ( http://nmap.org ) at 2016-08-25 12:25 UTC
+Nmap scan report for website.com (104.130.8.75)
+Host is up (0.000052s latency).
+rDNS record for 104.130.8.75: elector
+PORT    STATE  SERVICE
+443/tcp closed https
+
+Nmap done: 1 IP address (1 host up) scanned in 0.05 seconds
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="test-your-connection-by-using-your-server-s-console">
+<h2>Test your connection by using your server’s console<a class="headerlink" href="#test-your-connection-by-using-your-server-s-console" title="Permalink to this headline">¶</a></h2>
+<p>Even if your website appears back online after you perform the preceding steps,
+you need to test the site’s connectivity by using the console of the cloud
+server that hosts the site. To access the server’s console, perform the
+following steps:</p>
+<ol class="arabic">
+<li><p class="first">Log in to the <a class="reference external" href="https://login.rackspace.com/">Cloud Control Panel</a>.</p>
+</li>
+<li><p class="first">Select <strong>Servers &gt; Cloud Servers</strong>.</p>
+</li>
+<li><p class="first">Click the gear icon next to the name of the server that hosts your website
+and select <strong>Emergency Console</strong>.</p>
+<p>Use one of the following steps to test the server’s connectivity with the
+console.</p>
+</li>
+<li><p class="first"><em>(Linux)</em> Press <strong>Enter</strong> to see if the server is responsive during the
+login process.</p>
+<ul>
+<li><p class="first">If the server is responsive, you should see the following login prompts
+each time you press <strong>Enter</strong>.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CentOS</span> <span class="n">Linux</span> <span class="mi">7</span> <span class="p">(</span><span class="n">Core</span><span class="p">)</span>
+<span class="n">Kernel</span> <span class="mf">3.10</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">327.22</span><span class="o">.</span><span class="mf">2.e17</span><span class="o">.</span><span class="n">x86_64</span> <span class="n">on</span> <span class="n">an</span> <span class="n">x86_64</span>
+
+<span class="n">server</span><span class="o">-</span><span class="mi">01</span> <span class="n">login</span><span class="p">:</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you receive an <code class="docutils literal notranslate"><span class="pre">Out</span> <span class="pre">of</span> <span class="pre">memory</span></code> error (as shown in the following
+example), reboot the server and attempt to use the server’s console
+again.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="p">:</span> <span class="n">Out</span> <span class="n">of</span> <span class="n">memory</span><span class="p">:</span> <span class="n">Kill</span> <span class="n">process</span> <span class="mi">9163</span> <span class="p">(</span><span class="n">mysqld</span><span class="p">)</span> <span class="n">score</span> <span class="mi">511</span> <span class="ow">or</span> <span class="n">sacrifice</span> <span class="n">child</span>
+<span class="n">kernel</span><span class="p">:</span> <span class="n">Killed</span> <span class="n">process</span> <span class="mi">9163</span><span class="p">,</span> <span class="n">UID</span> <span class="mi">27</span><span class="p">,</span> <span class="p">(</span><span class="n">mysqld</span><span class="p">)</span> <span class="n">total</span><span class="o">-</span><span class="n">vm</span><span class="p">:</span><span class="mi">2457368</span><span class="n">kB</span><span class="p">,</span> <span class="n">anon</span><span class="o">-</span><span class="n">rss</span><span class="p">:</span><span class="mi">816780</span><span class="n">kB</span><span class="p">,</span> <span class="n">file</span><span class="o">-</span><span class="n">rss</span><span class="p">:</span><span class="mi">4</span><span class="n">kB</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">Out</span> <span class="pre">of</span> <span class="pre">memory</span></code> error occurs again, determine whether you need
+to resize the server or change the configuration for scalability.</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><em>(Windows)</em> Press <strong>Ctrl+Alt+Del</strong> to see if the server prompts you to log
+in.</p>
+<ul class="simple">
+<li>If you are prompted to log in, the server is powered on and active. Your
+website should be online.</li>
+<li>If the console switches to a blank screen, the server has likely crashed.
+Reboot the server and open the console again. If login prompt does not
+appear, press <strong>Esc</strong>.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you can’t connect to your Windows server’s console at all, contact
+Support to ensure that your host is not down.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &lt;YEAR&gt;, Rackspace
+      Last updated on Mar 02, 2020.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
